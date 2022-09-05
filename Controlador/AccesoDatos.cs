@@ -27,7 +27,6 @@ namespace Controlador
         {
             comando.CommandType = System.Data.CommandType.Text;
             comando.CommandText = consulta;
-
         }
 
         public void ejecutarLectura()
