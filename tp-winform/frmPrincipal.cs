@@ -28,6 +28,8 @@ namespace tp_winform
             {
                 listaArticulos = negocio.listar();
                 dgvArticulos.DataSource = listaArticulos;
+                dgvArticulos.Columns["ID"].Visible = false;
+                dgvArticulos.Columns["ImagenUrl"].Visible = false;
                 CargarImagen(listaArticulos[0].ImagenUrl);
             }
             catch (Exception ex)
@@ -56,6 +58,27 @@ namespace tp_winform
       
         }
 
-        
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            frmAgregar agregar = new frmAgregar();
+            agregar.ShowDialog();
+        }
+
+        private void btnDetalle_Click(object sender, EventArgs e)
+        {
+            frmDetalle detalle = new frmDetalle();
+            detalle.ShowDialog();
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            frmAgregar modificar = new frmAgregar();
+            modificar.ShowDialog();
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

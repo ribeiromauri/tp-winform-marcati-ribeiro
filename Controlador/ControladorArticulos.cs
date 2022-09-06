@@ -18,18 +18,20 @@ namespace Controlador
 
             try
             {
-                accesoDatos.setConsulta("SELECT Id, Codigo, Nombre, Descripcion, IdMarca, IdCategoria, ImagenUrl, Precio FROM ARTICULOS");
+                accesoDatos.setConsulta("SELECT A.Id, A.Codigo, A.Nombre, A.Descripcion, A.ImagenUrl, A.Precio, M.Descripcion AS Marca, C.Descripcion AS Categoria FROM ARTICULOS A INNER JOIN MARCAS M ON A.IdMarca = M.Id INNER JOIN CATEGORIAS C ON A.IdCategoria = C.Id");
                 accesoDatos.ejecutarLectura();
 
                 while (accesoDatos.Lector.Read())
                 {
                     Articulos aux = new Articulos();
-                    aux.ID = (int)accesoDatos.Lector["Id"];
+                    aux.ID = (int)accesoDatos.Lector["ID"];
                     aux.Codigo = (string)accesoDatos.Lector["Codigo"];
                     aux.Nombre = (string)accesoDatos.Lector["Nombre"];
                     aux.Descripcion = (string)accesoDatos.Lector["Descripcion"];
-                    aux.idMarca = (int)accesoDatos.Lector["IdMarca"];
-                    aux.idCategoria = (int)accesoDatos.Lector["IdCategoria"];
+                    aux.Marca = new Marcas();
+                    aux.Marca.Descripcion = (string)accesoDatos.Lector["Marca"];
+                    aux.Categoria = new Categorias();
+                    aux.Categoria.Descripcion = (string)accesoDatos.Lector["Categoria"];
                     aux.ImagenUrl = (string)accesoDatos.Lector["ImagenUrl"];
                     aux.Precio = (decimal)accesoDatos.Lector["Precio"];
 
