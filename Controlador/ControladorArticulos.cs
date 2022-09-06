@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Data.SqlClient;
-using Controlador;
+using Dominio;
 
-namespace Dominio
+
+namespace Controlador
 {
-    public class ListaArticulos
+    public class ControladorArticulos
     {
-       public List<Articulos> listar()
+        public List<Articulos> listar()
         {
             List<Articulos> lista = new List<Articulos>();
 
