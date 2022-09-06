@@ -68,9 +68,9 @@ namespace tp_winform
             this.pbxArticulo.Location = new System.Drawing.Point(755, 191);
             this.pbxArticulo.Name = "pbxArticulo";
             this.pbxArticulo.Size = new System.Drawing.Size(235, 218);
+            this.pbxArticulo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbxArticulo.TabIndex = 8;
             this.pbxArticulo.TabStop = false;
-            
             // 
             // btnAgregar
             // 
