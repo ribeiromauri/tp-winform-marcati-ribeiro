@@ -39,9 +39,9 @@ namespace tp_winform
             this.lblValor = new System.Windows.Forms.Label();
             this.txtBusqueda = new System.Windows.Forms.TextBox();
             this.rbtnPrecio = new System.Windows.Forms.RadioButton();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.rbtnMenorQue = new System.Windows.Forms.RadioButton();
+            this.rtbnMayorQue = new System.Windows.Forms.RadioButton();
+            this.rbtnIgual = new System.Windows.Forms.RadioButton();
             this.lblCriterio = new System.Windows.Forms.Label();
             this.rbtnDescripcion = new System.Windows.Forms.RadioButton();
             this.rbtnMarca = new System.Windows.Forms.RadioButton();
@@ -113,9 +113,9 @@ namespace tp_winform
             this.groupBox1.Controls.Add(this.lblValor);
             this.groupBox1.Controls.Add(this.txtBusqueda);
             this.groupBox1.Controls.Add(this.rbtnPrecio);
-            this.groupBox1.Controls.Add(this.radioButton3);
-            this.groupBox1.Controls.Add(this.radioButton2);
-            this.groupBox1.Controls.Add(this.radioButton1);
+            this.groupBox1.Controls.Add(this.rbtnMenorQue);
+            this.groupBox1.Controls.Add(this.rtbnMayorQue);
+            this.groupBox1.Controls.Add(this.rbtnIgual);
             this.groupBox1.Controls.Add(this.lblCriterio);
             this.groupBox1.Controls.Add(this.rbtnDescripcion);
             this.groupBox1.Controls.Add(this.rbtnMarca);
@@ -155,38 +155,38 @@ namespace tp_winform
             this.rbtnPrecio.Text = "Precio";
             this.rbtnPrecio.UseVisualStyleBackColor = true;
             // 
-            // radioButton3
+            // rbtnMenorQue
             // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(301, 52);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(79, 17);
-            this.radioButton3.TabIndex = 24;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "Menor que ";
-            this.radioButton3.UseVisualStyleBackColor = true;
+            this.rbtnMenorQue.AutoSize = true;
+            this.rbtnMenorQue.Location = new System.Drawing.Point(301, 52);
+            this.rbtnMenorQue.Name = "rbtnMenorQue";
+            this.rbtnMenorQue.Size = new System.Drawing.Size(79, 17);
+            this.rbtnMenorQue.TabIndex = 24;
+            this.rbtnMenorQue.TabStop = true;
+            this.rbtnMenorQue.Text = "Menor que ";
+            this.rbtnMenorQue.UseVisualStyleBackColor = true;
             // 
-            // radioButton2
+            // rtbnMayorQue
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(210, 52);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(75, 17);
-            this.radioButton2.TabIndex = 23;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Mayor que";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.rtbnMayorQue.AutoSize = true;
+            this.rtbnMayorQue.Location = new System.Drawing.Point(210, 52);
+            this.rtbnMayorQue.Name = "rtbnMayorQue";
+            this.rtbnMayorQue.Size = new System.Drawing.Size(75, 17);
+            this.rtbnMayorQue.TabIndex = 23;
+            this.rtbnMayorQue.TabStop = true;
+            this.rtbnMayorQue.Text = "Mayor que";
+            this.rtbnMayorQue.UseVisualStyleBackColor = true;
             // 
-            // radioButton1
+            // rbtnIgual
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(106, 52);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(48, 17);
-            this.radioButton1.TabIndex = 22;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Igual";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.rbtnIgual.AutoSize = true;
+            this.rbtnIgual.Location = new System.Drawing.Point(106, 52);
+            this.rbtnIgual.Name = "rbtnIgual";
+            this.rbtnIgual.Size = new System.Drawing.Size(48, 17);
+            this.rbtnIgual.TabIndex = 22;
+            this.rbtnIgual.TabStop = true;
+            this.rbtnIgual.Text = "Igual";
+            this.rbtnIgual.UseVisualStyleBackColor = true;
             // 
             // lblCriterio
             // 
@@ -277,9 +277,9 @@ namespace tp_winform
         private System.Windows.Forms.Label lblValor;
         private System.Windows.Forms.TextBox txtBusqueda;
         private System.Windows.Forms.RadioButton rbtnPrecio;
-        private System.Windows.Forms.RadioButton radioButton3;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.RadioButton rbtnMenorQue;
+        private System.Windows.Forms.RadioButton rtbnMayorQue;
+        private System.Windows.Forms.RadioButton rbtnIgual;
         private System.Windows.Forms.Label lblCriterio;
         private System.Windows.Forms.RadioButton rbtnDescripcion;
         private System.Windows.Forms.RadioButton rbtnMarca;
