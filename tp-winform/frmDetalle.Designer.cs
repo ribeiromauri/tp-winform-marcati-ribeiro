@@ -35,7 +35,7 @@ namespace tp_winform
             this.lblCodigo = new System.Windows.Forms.Label();
             this.lblPrecio = new System.Windows.Forms.Label();
             this.lblDescripcion = new System.Windows.Forms.Label();
-            this.txtCodigo = new System.Windows.Forms.TextBox();
+            this.txtCodigo2 = new System.Windows.Forms.TextBox();
             this.txtMarca = new System.Windows.Forms.TextBox();
             this.txtCategoria = new System.Windows.Forms.TextBox();
             this.txtPrecio = new System.Windows.Forms.TextBox();
@@ -98,12 +98,12 @@ namespace tp_winform
             this.lblDescripcion.TabIndex = 27;
             this.lblDescripcion.Text = "Descripcion";
             // 
-            // txtCodigo
+            // txtCodigo2
             // 
-            this.txtCodigo.Location = new System.Drawing.Point(120, 49);
-            this.txtCodigo.Name = "txtCodigo";
-            this.txtCodigo.Size = new System.Drawing.Size(122, 20);
-            this.txtCodigo.TabIndex = 29;
+            this.txtCodigo2.Location = new System.Drawing.Point(120, 52);
+            this.txtCodigo2.Name = "txtCodigo2";
+            this.txtCodigo2.Size = new System.Drawing.Size(122, 20);
+            this.txtCodigo2.TabIndex = 29;
             // 
             // txtMarca
             // 
@@ -153,7 +153,7 @@ namespace tp_winform
             this.Controls.Add(this.txtPrecio);
             this.Controls.Add(this.txtCategoria);
             this.Controls.Add(this.txtMarca);
-            this.Controls.Add(this.txtCodigo);
+            this.Controls.Add(this.txtCodigo2);
             this.Controls.Add(this.lblPrecio);
             this.Controls.Add(this.lblDescripcion);
             this.Controls.Add(this.lblCategoria);
@@ -176,7 +176,7 @@ namespace tp_winform
         private System.Windows.Forms.Label lblCodigo;
         private System.Windows.Forms.Label lblPrecio;
         private System.Windows.Forms.Label lblDescripcion;
-        private System.Windows.Forms.TextBox txtCodigo;
+        private System.Windows.Forms.TextBox txtCodigo2;
         private System.Windows.Forms.TextBox txtMarca;
         private System.Windows.Forms.TextBox txtCategoria;
         private System.Windows.Forms.TextBox txtPrecio;

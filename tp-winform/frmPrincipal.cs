@@ -34,7 +34,7 @@ namespace tp_winform
             }
             catch (Exception ex)
             {
-                throw ex;
+                MessageBox.Show(ex.Message);
             }
         }
 
@@ -46,8 +46,9 @@ namespace tp_winform
             }
             catch (Exception ex)
             {
-                pbxArticulo.Load("https://mpng.subpng.com/20180820/iyz/kisspng-computer-icons-vector-graphics-image-icon-design-i-flat-delete-icon-bing-images-5b7b43bfdfb3e4.1170827415348049279163.jpg");
-                throw ex;
+                pbxArticulo.Load("https://cdn.onlinewebfonts.com/svg/img_526949.png");
+                string mensaje = "Error al cargar imagen. Revisar URL";
+                MessageBox.Show(mensaje, ex.Message);
             }
         }
 
@@ -66,19 +67,29 @@ namespace tp_winform
 
         private void btnDetalle_Click(object sender, EventArgs e)
         {
-            frmDetalle detalle = new frmDetalle();
+            //POR QUE NO ANDA LPM
+            Articulos seleccionado = (Articulos)dgvArticulos.CurrentRow.DataBoundItem;
+            frmDetalle detalle = new frmDetalle(seleccionado);
             detalle.ShowDialog();
+            Cargar();
         }
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
             frmAgregar modificar = new frmAgregar();
             modificar.ShowDialog();
+            
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void dgvArticulos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            Articulos seleccionado = (Articulos)dgvArticulos.CurrentRow.DataBoundItem;
+            CargarImagen(seleccionado.ImagenUrl);
         }
     }
 }

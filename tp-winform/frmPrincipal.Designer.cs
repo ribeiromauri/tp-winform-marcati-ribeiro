@@ -62,6 +62,7 @@ namespace tp_winform
             this.dgvArticulos.Name = "dgvArticulos";
             this.dgvArticulos.Size = new System.Drawing.Size(644, 247);
             this.dgvArticulos.TabIndex = 7;
+            this.dgvArticulos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvArticulos_CellContentClick);
             // 
             // pbxArticulo
             // 
