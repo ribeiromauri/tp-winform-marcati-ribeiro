@@ -49,5 +49,24 @@ namespace Controlador
                 accesoDatos.cerrarConexion();
             }
         }
+        public void Eliminar(int ID)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.setConsulta("DELETE FROM Articulos WHERE Id = @id");
+                datos.setParametro("@id", ID);
+                datos.ejecutarLectura();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
     }
+
 }

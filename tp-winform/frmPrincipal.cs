@@ -55,8 +55,7 @@ namespace tp_winform
         private void frmPrincipal_Load(object sender, EventArgs e)
         {
             ControladorArticulos controlador = new ControladorArticulos();
-            Cargar();
-      
+            Cargar();     
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
@@ -82,7 +81,22 @@ namespace tp_winform
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-
+            ControladorArticulos controlador = new ControladorArticulos();
+            Articulos seleccionado; 
+            try
+            {
+                DialogResult eliminar = MessageBox.Show("¿Eliminar registro?", "Eliminando registro", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (eliminar == DialogResult.Yes)
+                {
+                    seleccionado = (Articulos)dgvArticulos.CurrentRow.DataBoundItem;
+                    controlador.Eliminar(seleccionado.ID);
+                    Cargar();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
         }
 
         private void dgvArticulos_CellContentClick(object sender, DataGridViewCellEventArgs e)
