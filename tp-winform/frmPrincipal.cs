@@ -67,7 +67,6 @@ namespace tp_winform
 
         private void btnDetalle_Click(object sender, EventArgs e)
         {
-            //POR QUE NO ANDA LPM
             Articulos seleccionado = (Articulos)dgvArticulos.CurrentRow.DataBoundItem;
             frmDetalle detalle = new frmDetalle(seleccionado);
             detalle.ShowDialog();

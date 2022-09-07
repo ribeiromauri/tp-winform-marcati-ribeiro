@@ -7,25 +7,25 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Dominio;
+using System.Data.SqlClient;
 using Controlador;
+using Dominio;
 
 namespace tp_winform
 {
     public partial class frmDetalle : Form
-    {
-        Articulos articulo = new Articulos();
-        public frmDetalle(Articulos articulo)
+    {        
+        public frmDetalle(Articulos articulos)
         {
             InitializeComponent();
-            this.articulo = articulo;
+            Cargar(articulos); 
         }
 
-        private void frmDetalle_Load(object sender, EventArgs e)
+        public void Cargar(Articulos articulo)
         {
             CargarImagen(articulo.ImagenUrl);
             lblNombre.Text = articulo.Nombre;
-            txtCodigo2.Text = articulo.Codigo;
+            txtCodigo.Text = articulo.Codigo;
             txtMarca.Text = articulo.Marca.Descripcion;
             txtCategoria.Text = articulo.Categoria.Descripcion;
             string precio = articulo.Precio.ToString();
@@ -33,7 +33,7 @@ namespace tp_winform
             txtDescripcion.Text = articulo.Descripcion;
         }
 
-        public void CargarImagen(string imagen)
+        void CargarImagen(string imagen)
         {
             try
             {
@@ -41,7 +41,9 @@ namespace tp_winform
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                pbxArticulo.Load("https://cdn.onlinewebfonts.com/svg/img_526949.png");
+                string mensaje = "Error al cargar imagen. Revisar URL";
+                MessageBox.Show(mensaje, ex.Message);
             }
         }
     }

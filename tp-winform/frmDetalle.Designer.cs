@@ -35,7 +35,7 @@ namespace tp_winform
             this.lblCodigo = new System.Windows.Forms.Label();
             this.lblPrecio = new System.Windows.Forms.Label();
             this.lblDescripcion = new System.Windows.Forms.Label();
-            this.txtCodigo2 = new System.Windows.Forms.TextBox();
+            this.txtCodigo = new System.Windows.Forms.TextBox();
             this.txtMarca = new System.Windows.Forms.TextBox();
             this.txtCategoria = new System.Windows.Forms.TextBox();
             this.txtPrecio = new System.Windows.Forms.TextBox();
@@ -47,63 +47,69 @@ namespace tp_winform
             // lblCategoria
             // 
             this.lblCategoria.AutoSize = true;
-            this.lblCategoria.Location = new System.Drawing.Point(60, 134);
+            this.lblCategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.lblCategoria.Location = new System.Drawing.Point(38, 133);
             this.lblCategoria.Name = "lblCategoria";
-            this.lblCategoria.Size = new System.Drawing.Size(52, 13);
+            this.lblCategoria.Size = new System.Drawing.Size(67, 16);
             this.lblCategoria.TabIndex = 26;
             this.lblCategoria.Text = "Categoria";
             // 
             // lblMarca
             // 
             this.lblMarca.AutoSize = true;
+            this.lblMarca.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMarca.Location = new System.Drawing.Point(60, 93);
             this.lblMarca.Name = "lblMarca";
-            this.lblMarca.Size = new System.Drawing.Size(37, 13);
+            this.lblMarca.Size = new System.Drawing.Size(46, 16);
             this.lblMarca.TabIndex = 25;
             this.lblMarca.Text = "Marca";
             // 
             // lblNombre
             // 
             this.lblNombre.AutoSize = true;
-            this.lblNombre.Location = new System.Drawing.Point(247, 25);
+            this.lblNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNombre.Location = new System.Drawing.Point(206, 9);
             this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(44, 13);
+            this.lblNombre.Size = new System.Drawing.Size(85, 24);
             this.lblNombre.TabIndex = 24;
             this.lblNombre.Text = "Nombre";
             // 
             // lblCodigo
             // 
             this.lblCodigo.AutoSize = true;
+            this.lblCodigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCodigo.Location = new System.Drawing.Point(60, 52);
             this.lblCodigo.Name = "lblCodigo";
-            this.lblCodigo.Size = new System.Drawing.Size(40, 13);
+            this.lblCodigo.Size = new System.Drawing.Size(52, 16);
             this.lblCodigo.TabIndex = 23;
             this.lblCodigo.Text = "Codigo";
             // 
             // lblPrecio
             // 
             this.lblPrecio.AutoSize = true;
-            this.lblPrecio.Location = new System.Drawing.Point(60, 170);
+            this.lblPrecio.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.lblPrecio.Location = new System.Drawing.Point(60, 169);
             this.lblPrecio.Name = "lblPrecio";
-            this.lblPrecio.Size = new System.Drawing.Size(37, 13);
+            this.lblPrecio.Size = new System.Drawing.Size(47, 16);
             this.lblPrecio.TabIndex = 28;
             this.lblPrecio.Text = "Precio";
             // 
             // lblDescripcion
             // 
             this.lblDescripcion.AutoSize = true;
-            this.lblDescripcion.Location = new System.Drawing.Point(60, 217);
+            this.lblDescripcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.lblDescripcion.Location = new System.Drawing.Point(38, 216);
             this.lblDescripcion.Name = "lblDescripcion";
-            this.lblDescripcion.Size = new System.Drawing.Size(63, 13);
+            this.lblDescripcion.Size = new System.Drawing.Size(80, 16);
             this.lblDescripcion.TabIndex = 27;
             this.lblDescripcion.Text = "Descripcion";
             // 
-            // txtCodigo2
+            // txtCodigo
             // 
-            this.txtCodigo2.Location = new System.Drawing.Point(120, 52);
-            this.txtCodigo2.Name = "txtCodigo2";
-            this.txtCodigo2.Size = new System.Drawing.Size(122, 20);
-            this.txtCodigo2.TabIndex = 29;
+            this.txtCodigo.Location = new System.Drawing.Point(120, 52);
+            this.txtCodigo.Name = "txtCodigo";
+            this.txtCodigo.Size = new System.Drawing.Size(122, 20);
+            this.txtCodigo.TabIndex = 29;
             // 
             // txtMarca
             // 
@@ -140,6 +146,7 @@ namespace tp_winform
             this.pbxArticulo.Location = new System.Drawing.Point(268, 49);
             this.pbxArticulo.Name = "pbxArticulo";
             this.pbxArticulo.Size = new System.Drawing.Size(211, 162);
+            this.pbxArticulo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbxArticulo.TabIndex = 35;
             this.pbxArticulo.TabStop = false;
             // 
@@ -147,13 +154,14 @@ namespace tp_winform
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Bisque;
             this.ClientSize = new System.Drawing.Size(516, 298);
             this.Controls.Add(this.pbxArticulo);
             this.Controls.Add(this.txtDescripcion);
             this.Controls.Add(this.txtPrecio);
             this.Controls.Add(this.txtCategoria);
             this.Controls.Add(this.txtMarca);
-            this.Controls.Add(this.txtCodigo2);
+            this.Controls.Add(this.txtCodigo);
             this.Controls.Add(this.lblPrecio);
             this.Controls.Add(this.lblDescripcion);
             this.Controls.Add(this.lblCategoria);
@@ -161,6 +169,7 @@ namespace tp_winform
             this.Controls.Add(this.lblNombre);
             this.Controls.Add(this.lblCodigo);
             this.Name = "frmDetalle";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmDetalle";
             ((System.ComponentModel.ISupportInitialize)(this.pbxArticulo)).EndInit();
             this.ResumeLayout(false);
@@ -176,7 +185,7 @@ namespace tp_winform
         private System.Windows.Forms.Label lblCodigo;
         private System.Windows.Forms.Label lblPrecio;
         private System.Windows.Forms.Label lblDescripcion;
-        private System.Windows.Forms.TextBox txtCodigo2;
+        private System.Windows.Forms.TextBox txtCodigo;
         private System.Windows.Forms.TextBox txtMarca;
         private System.Windows.Forms.TextBox txtCategoria;
         private System.Windows.Forms.TextBox txtPrecio;

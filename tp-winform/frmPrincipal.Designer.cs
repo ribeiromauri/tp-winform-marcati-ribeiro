@@ -261,6 +261,7 @@ namespace tp_winform
             this.MaximumSize = new System.Drawing.Size(1098, 489);
             this.MinimumSize = new System.Drawing.Size(1098, 489);
             this.Name = "frmPrincipal";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TP2 WINFORM";
             this.Load += new System.EventHandler(this.frmPrincipal_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvArticulos)).EndInit();
