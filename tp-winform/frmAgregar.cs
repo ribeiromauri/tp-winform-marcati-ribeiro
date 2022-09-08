@@ -79,8 +79,6 @@ namespace tp_winform
             catch (Exception ex)
             {
                 pbxArticulos.Load("https://cdn.onlinewebfonts.com/svg/img_526949.png");
-                string mensaje = "Error al cargar imagen. Revisar URL";
-                MessageBox.Show(mensaje, ex.Message);
             }
         }
     }
