@@ -38,7 +38,7 @@ namespace tp_winform
             }
         }
 
-        void CargarImagen(string imagen)
+        private void CargarImagen(string imagen)
         {
             try
             {
@@ -62,6 +62,7 @@ namespace tp_winform
         {
             frmAgregar agregar = new frmAgregar();
             agregar.ShowDialog();
+            Cargar();
         }
 
         private void btnDetalle_Click(object sender, EventArgs e)
@@ -76,7 +77,7 @@ namespace tp_winform
         {
             frmAgregar modificar = new frmAgregar();
             modificar.ShowDialog();
-            
+            Cargar();
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -103,6 +104,134 @@ namespace tp_winform
         {
             Articulos seleccionado = (Articulos)dgvArticulos.CurrentRow.DataBoundItem;
             CargarImagen(seleccionado.ImagenUrl);
+        }
+
+        SqlConnection conexion = new SqlConnection("server=.\\SQLEXPRESS; database=CATALOGO_DB; integrated security=true");
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            string query;
+            if (rbtNombre.Checked)
+            {
+                if (rbtIgual.Checked)
+                {
+                    query = "Select * From Articulos where Nombre = '" + txtCriterio.Text + "'";
+                    SqlCommand comando = new SqlCommand(query, conexion);
+                    SqlDataAdapter data = new SqlDataAdapter(comando);
+                    DataTable tabla = new DataTable();
+                    data.Fill(tabla);
+                    dgvArticulos.DataSource = tabla;
+                }
+                if (rbtMayor.Checked)
+                {
+                    query = "Select * From Articulos where Nombre > '" + txtCriterio.Text + "'";
+                    SqlCommand comando = new SqlCommand(query, conexion);
+                    SqlDataAdapter data = new SqlDataAdapter(comando);
+                    DataTable tabla = new DataTable();
+                    data.Fill(tabla);
+                    dgvArticulos.DataSource = tabla;
+                }
+                if (rbtMenor.Checked)
+                {
+                    query = "Select * From Articulos where Nombre < '" + txtCriterio.Text + "'";
+                    SqlCommand comando = new SqlCommand(query, conexion);
+                    SqlDataAdapter data = new SqlDataAdapter(comando);
+                    DataTable tabla = new DataTable();
+                    data.Fill(tabla);
+                    dgvArticulos.DataSource = tabla;
+
+                }
+            }
+            if (rbtMarca.Checked)
+            {
+                if (rbtIgual.Checked)
+                {
+                    query = "Select * From Articulos where idMarca = '" + txtCriterio.Text + "'";
+                    SqlCommand comando = new SqlCommand(query, conexion);
+                    SqlDataAdapter data = new SqlDataAdapter(comando);
+                    DataTable tabla = new DataTable();
+                    data.Fill(tabla);
+                    dgvArticulos.DataSource = tabla;
+                }
+                if (rbtMayor.Checked)
+                {
+                    query = "Select * From Articulos where idMarca > '" + txtCriterio.Text + "'";
+                    SqlCommand comando = new SqlCommand(query, conexion);
+                    SqlDataAdapter data = new SqlDataAdapter(comando);
+                    DataTable tabla = new DataTable();
+                    data.Fill(tabla);
+                    dgvArticulos.DataSource = tabla;
+                }
+                if (rbtMenor.Checked)
+                {
+                    query = "Select * From Articulos where idMarca < '" + txtCriterio.Text + "'";
+                    SqlCommand comando = new SqlCommand(query, conexion);
+                    SqlDataAdapter data = new SqlDataAdapter(comando);
+                    DataTable tabla = new DataTable();
+                    data.Fill(tabla);
+                    dgvArticulos.DataSource = tabla;
+                }
+            }
+            if (rbtDescripcion.Checked)
+            {
+                if (rbtIgual.Checked)
+                {
+                    query = "Select * From Articulos where Descripcion = '" + txtCriterio.Text + "'";
+                    SqlCommand comando = new SqlCommand(query, conexion);
+                    SqlDataAdapter data = new SqlDataAdapter(comando);
+                    DataTable tabla = new DataTable();
+                    data.Fill(tabla);
+                    dgvArticulos.DataSource = tabla;
+                }
+                if (rbtMayor.Checked)
+                {
+                    query = "Select * From Articulos where Descripcion > '" + txtCriterio.Text + "'";
+                    SqlCommand comando = new SqlCommand(query, conexion);
+                    SqlDataAdapter data = new SqlDataAdapter(comando);
+                    DataTable tabla = new DataTable();
+                    data.Fill(tabla);
+                    dgvArticulos.DataSource = tabla;
+                }
+                if (rbtMenor.Checked)
+                {
+                    query = "Select * From Articulos where Descripcion < '" + txtCriterio.Text + "'";
+                    SqlCommand comando = new SqlCommand(query, conexion);
+                    SqlDataAdapter data = new SqlDataAdapter(comando);
+                    DataTable tabla = new DataTable();
+                    data.Fill(tabla);
+                    dgvArticulos.DataSource = tabla;
+                }
+            }
+            if (rbtPrecio.Checked)
+            {
+                if (rbtIgual.Checked)
+                {
+                    query = "Select * From Articulos where Precio = '" + decimal.Parse(txtCriterio.Text) + "'";
+                    SqlCommand comando = new SqlCommand(query, conexion);
+                    SqlDataAdapter data = new SqlDataAdapter(comando);
+                    DataTable tabla = new DataTable();
+                    data.Fill(tabla);
+                    dgvArticulos.DataSource = tabla;
+                }
+                if (rbtMayor.Checked)
+                {
+                    query = "Select * From Articulos where Precio > '" + txtCriterio.Text + "'";
+                    SqlCommand comando = new SqlCommand(query, conexion);
+                    SqlDataAdapter data = new SqlDataAdapter(comando);
+                    DataTable tabla = new DataTable();
+                    data.Fill(tabla);
+                    dgvArticulos.DataSource = tabla;
+                }
+                if (rbtMenor.Checked)
+                {
+                    query = "Select * From Articulos where Precio < '" + txtCriterio.Text + "'";
+                    SqlCommand comando = new SqlCommand(query, conexion);
+                    SqlDataAdapter data = new SqlDataAdapter(comando);
+                    DataTable tabla = new DataTable();
+                    data.Fill(tabla);
+                    dgvArticulos.DataSource = tabla;
+                }
+            }
         }
     }
 }

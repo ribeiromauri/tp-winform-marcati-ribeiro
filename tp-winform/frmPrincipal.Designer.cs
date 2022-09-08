@@ -35,21 +35,22 @@ namespace tp_winform
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnDetalle = new System.Windows.Forms.Button();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.lblValor = new System.Windows.Forms.Label();
-            this.txtBusqueda = new System.Windows.Forms.TextBox();
-            this.rbtnPrecio = new System.Windows.Forms.RadioButton();
-            this.rbtnMenorQue = new System.Windows.Forms.RadioButton();
-            this.rtbnMayorQue = new System.Windows.Forms.RadioButton();
-            this.rbtnIgual = new System.Windows.Forms.RadioButton();
-            this.lblCriterio = new System.Windows.Forms.Label();
-            this.rbtnDescripcion = new System.Windows.Forms.RadioButton();
-            this.rbtnMarca = new System.Windows.Forms.RadioButton();
-            this.rbtnNombre = new System.Windows.Forms.RadioButton();
-            this.lblColumna = new System.Windows.Forms.Label();
+            this.gbColumna = new System.Windows.Forms.GroupBox();
+            this.rbtPrecio = new System.Windows.Forms.RadioButton();
+            this.rbtDescripcion = new System.Windows.Forms.RadioButton();
+            this.rbtMarca = new System.Windows.Forms.RadioButton();
+            this.rbtNombre = new System.Windows.Forms.RadioButton();
+            this.gpCriterio = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtCriterio = new System.Windows.Forms.TextBox();
+            this.rbtMenor = new System.Windows.Forms.RadioButton();
+            this.rbtMayor = new System.Windows.Forms.RadioButton();
+            this.rbtIgual = new System.Windows.Forms.RadioButton();
+            this.btnBuscar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvArticulos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxArticulo)).BeginInit();
-            this.groupBox1.SuspendLayout();
+            this.gbColumna.SuspendLayout();
+            this.gpCriterio.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgvArticulos
@@ -57,11 +58,14 @@ namespace tp_winform
             this.dgvArticulos.BackgroundColor = System.Drawing.Color.White;
             this.dgvArticulos.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvArticulos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvArticulos.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvArticulos.Location = new System.Drawing.Point(124, 191);
             this.dgvArticulos.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.dgvArticulos.MultiSelect = false;
             this.dgvArticulos.Name = "dgvArticulos";
+            this.dgvArticulos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvArticulos.Size = new System.Drawing.Size(644, 247);
-            this.dgvArticulos.TabIndex = 7;
+            this.dgvArticulos.TabIndex = 5;
             this.dgvArticulos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvArticulos_CellContentClick);
             // 
             // pbxArticulo
@@ -78,7 +82,7 @@ namespace tp_winform
             this.btnAgregar.Location = new System.Drawing.Point(28, 227);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(75, 23);
-            this.btnAgregar.TabIndex = 9;
+            this.btnAgregar.TabIndex = 1;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
@@ -88,7 +92,7 @@ namespace tp_winform
             this.btnModificar.Location = new System.Drawing.Point(28, 288);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(75, 23);
-            this.btnModificar.TabIndex = 10;
+            this.btnModificar.TabIndex = 2;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = true;
             this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
@@ -98,7 +102,7 @@ namespace tp_winform
             this.btnEliminar.Location = new System.Drawing.Point(28, 348);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(75, 23);
-            this.btnEliminar.TabIndex = 11;
+            this.btnEliminar.TabIndex = 3;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
@@ -108,141 +112,140 @@ namespace tp_winform
             this.btnDetalle.Location = new System.Drawing.Point(905, 415);
             this.btnDetalle.Name = "btnDetalle";
             this.btnDetalle.Size = new System.Drawing.Size(75, 23);
-            this.btnDetalle.TabIndex = 12;
+            this.btnDetalle.TabIndex = 4;
             this.btnDetalle.Text = "Ver Detalle";
             this.btnDetalle.UseVisualStyleBackColor = true;
             this.btnDetalle.Click += new System.EventHandler(this.btnDetalle_Click);
             // 
-            // groupBox1
+            // gbColumna
             // 
-            this.groupBox1.Controls.Add(this.lblValor);
-            this.groupBox1.Controls.Add(this.txtBusqueda);
-            this.groupBox1.Controls.Add(this.rbtnPrecio);
-            this.groupBox1.Controls.Add(this.rbtnMenorQue);
-            this.groupBox1.Controls.Add(this.rtbnMayorQue);
-            this.groupBox1.Controls.Add(this.rbtnIgual);
-            this.groupBox1.Controls.Add(this.lblCriterio);
-            this.groupBox1.Controls.Add(this.rbtnDescripcion);
-            this.groupBox1.Controls.Add(this.rbtnMarca);
-            this.groupBox1.Controls.Add(this.rbtnNombre);
-            this.groupBox1.Controls.Add(this.lblColumna);
-            this.groupBox1.Location = new System.Drawing.Point(124, 48);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(547, 118);
-            this.groupBox1.TabIndex = 14;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Busquedas";
+            this.gbColumna.Controls.Add(this.rbtPrecio);
+            this.gbColumna.Controls.Add(this.rbtDescripcion);
+            this.gbColumna.Controls.Add(this.rbtMarca);
+            this.gbColumna.Controls.Add(this.rbtNombre);
+            this.gbColumna.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbColumna.Location = new System.Drawing.Point(124, 12);
+            this.gbColumna.Name = "gbColumna";
+            this.gbColumna.Size = new System.Drawing.Size(547, 54);
+            this.gbColumna.TabIndex = 15;
+            this.gbColumna.TabStop = false;
+            this.gbColumna.Text = "Columna";
             // 
-            // lblValor
+            // rbtPrecio
             // 
-            this.lblValor.AutoSize = true;
-            this.lblValor.Location = new System.Drawing.Point(6, 92);
-            this.lblValor.Name = "lblValor";
-            this.lblValor.Size = new System.Drawing.Size(31, 13);
-            this.lblValor.TabIndex = 27;
-            this.lblValor.Text = "Valor";
+            this.rbtPrecio.AutoSize = true;
+            this.rbtPrecio.Location = new System.Drawing.Point(426, 22);
+            this.rbtPrecio.Name = "rbtPrecio";
+            this.rbtPrecio.Size = new System.Drawing.Size(70, 20);
+            this.rbtPrecio.TabIndex = 3;
+            this.rbtPrecio.Text = "Precio";
+            this.rbtPrecio.UseVisualStyleBackColor = true;
             // 
-            // txtBusqueda
+            // rbtDescripcion
             // 
-            this.txtBusqueda.Location = new System.Drawing.Point(73, 92);
-            this.txtBusqueda.Name = "txtBusqueda";
-            this.txtBusqueda.Size = new System.Drawing.Size(424, 20);
-            this.txtBusqueda.TabIndex = 26;
+            this.rbtDescripcion.AutoSize = true;
+            this.rbtDescripcion.Location = new System.Drawing.Point(301, 22);
+            this.rbtDescripcion.Name = "rbtDescripcion";
+            this.rbtDescripcion.Size = new System.Drawing.Size(108, 20);
+            this.rbtDescripcion.TabIndex = 2;
+            this.rbtDescripcion.Text = "Descripcion";
+            this.rbtDescripcion.UseVisualStyleBackColor = true;
             // 
-            // rbtnPrecio
+            // rbtMarca
             // 
-            this.rbtnPrecio.AutoSize = true;
-            this.rbtnPrecio.Location = new System.Drawing.Point(414, 24);
-            this.rbtnPrecio.Name = "rbtnPrecio";
-            this.rbtnPrecio.Size = new System.Drawing.Size(55, 17);
-            this.rbtnPrecio.TabIndex = 25;
-            this.rbtnPrecio.TabStop = true;
-            this.rbtnPrecio.Text = "Precio";
-            this.rbtnPrecio.UseVisualStyleBackColor = true;
+            this.rbtMarca.AutoSize = true;
+            this.rbtMarca.Location = new System.Drawing.Point(210, 22);
+            this.rbtMarca.Name = "rbtMarca";
+            this.rbtMarca.Size = new System.Drawing.Size(68, 20);
+            this.rbtMarca.TabIndex = 1;
+            this.rbtMarca.Text = "Marca";
+            this.rbtMarca.UseVisualStyleBackColor = true;
             // 
-            // rbtnMenorQue
+            // rbtNombre
             // 
-            this.rbtnMenorQue.AutoSize = true;
-            this.rbtnMenorQue.Location = new System.Drawing.Point(301, 52);
-            this.rbtnMenorQue.Name = "rbtnMenorQue";
-            this.rbtnMenorQue.Size = new System.Drawing.Size(79, 17);
-            this.rbtnMenorQue.TabIndex = 24;
-            this.rbtnMenorQue.TabStop = true;
-            this.rbtnMenorQue.Text = "Menor que ";
-            this.rbtnMenorQue.UseVisualStyleBackColor = true;
+            this.rbtNombre.AutoSize = true;
+            this.rbtNombre.Checked = true;
+            this.rbtNombre.Location = new System.Drawing.Point(106, 22);
+            this.rbtNombre.Name = "rbtNombre";
+            this.rbtNombre.Size = new System.Drawing.Size(80, 20);
+            this.rbtNombre.TabIndex = 0;
+            this.rbtNombre.TabStop = true;
+            this.rbtNombre.Text = "Nombre";
+            this.rbtNombre.UseVisualStyleBackColor = true;
             // 
-            // rtbnMayorQue
+            // gpCriterio
             // 
-            this.rtbnMayorQue.AutoSize = true;
-            this.rtbnMayorQue.Location = new System.Drawing.Point(210, 52);
-            this.rtbnMayorQue.Name = "rtbnMayorQue";
-            this.rtbnMayorQue.Size = new System.Drawing.Size(75, 17);
-            this.rtbnMayorQue.TabIndex = 23;
-            this.rtbnMayorQue.TabStop = true;
-            this.rtbnMayorQue.Text = "Mayor que";
-            this.rtbnMayorQue.UseVisualStyleBackColor = true;
+            this.gpCriterio.Controls.Add(this.label1);
+            this.gpCriterio.Controls.Add(this.txtCriterio);
+            this.gpCriterio.Controls.Add(this.rbtMenor);
+            this.gpCriterio.Controls.Add(this.rbtMayor);
+            this.gpCriterio.Controls.Add(this.rbtIgual);
+            this.gpCriterio.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gpCriterio.Location = new System.Drawing.Point(124, 72);
+            this.gpCriterio.Name = "gpCriterio";
+            this.gpCriterio.Size = new System.Drawing.Size(547, 91);
+            this.gpCriterio.TabIndex = 16;
+            this.gpCriterio.TabStop = false;
+            this.gpCriterio.Text = "Criterio";
             // 
-            // rbtnIgual
+            // label1
             // 
-            this.rbtnIgual.AutoSize = true;
-            this.rbtnIgual.Location = new System.Drawing.Point(106, 52);
-            this.rbtnIgual.Name = "rbtnIgual";
-            this.rbtnIgual.Size = new System.Drawing.Size(48, 17);
-            this.rbtnIgual.TabIndex = 22;
-            this.rbtnIgual.TabStop = true;
-            this.rbtnIgual.Text = "Igual";
-            this.rbtnIgual.UseVisualStyleBackColor = true;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(16, 56);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(44, 16);
+            this.label1.TabIndex = 27;
+            this.label1.Text = "Valor";
             // 
-            // lblCriterio
+            // txtCriterio
             // 
-            this.lblCriterio.AutoSize = true;
-            this.lblCriterio.Location = new System.Drawing.Point(6, 52);
-            this.lblCriterio.Name = "lblCriterio";
-            this.lblCriterio.Size = new System.Drawing.Size(39, 13);
-            this.lblCriterio.TabIndex = 21;
-            this.lblCriterio.Text = "Criterio";
+            this.txtCriterio.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCriterio.Location = new System.Drawing.Point(83, 56);
+            this.txtCriterio.Name = "txtCriterio";
+            this.txtCriterio.Size = new System.Drawing.Size(424, 22);
+            this.txtCriterio.TabIndex = 3;
             // 
-            // rbtnDescripcion
+            // rbtMenor
             // 
-            this.rbtnDescripcion.AutoSize = true;
-            this.rbtnDescripcion.Location = new System.Drawing.Point(301, 22);
-            this.rbtnDescripcion.Name = "rbtnDescripcion";
-            this.rbtnDescripcion.Size = new System.Drawing.Size(81, 17);
-            this.rbtnDescripcion.TabIndex = 20;
-            this.rbtnDescripcion.TabStop = true;
-            this.rbtnDescripcion.Text = "Descripcion";
-            this.rbtnDescripcion.UseVisualStyleBackColor = true;
+            this.rbtMenor.AutoSize = true;
+            this.rbtMenor.Location = new System.Drawing.Point(340, 16);
+            this.rbtMenor.Name = "rbtMenor";
+            this.rbtMenor.Size = new System.Drawing.Size(102, 20);
+            this.rbtMenor.TabIndex = 2;
+            this.rbtMenor.Text = "Menor que ";
+            this.rbtMenor.UseVisualStyleBackColor = true;
             // 
-            // rbtnMarca
+            // rbtMayor
             // 
-            this.rbtnMarca.AutoSize = true;
-            this.rbtnMarca.Location = new System.Drawing.Point(210, 22);
-            this.rbtnMarca.Name = "rbtnMarca";
-            this.rbtnMarca.Size = new System.Drawing.Size(55, 17);
-            this.rbtnMarca.TabIndex = 19;
-            this.rbtnMarca.TabStop = true;
-            this.rbtnMarca.Text = "Marca";
-            this.rbtnMarca.UseVisualStyleBackColor = true;
+            this.rbtMayor.AutoSize = true;
+            this.rbtMayor.Location = new System.Drawing.Point(210, 16);
+            this.rbtMayor.Name = "rbtMayor";
+            this.rbtMayor.Size = new System.Drawing.Size(98, 20);
+            this.rbtMayor.TabIndex = 1;
+            this.rbtMayor.Text = "Mayor que";
+            this.rbtMayor.UseVisualStyleBackColor = true;
             // 
-            // rbtnNombre
+            // rbtIgual
             // 
-            this.rbtnNombre.AutoSize = true;
-            this.rbtnNombre.Location = new System.Drawing.Point(106, 22);
-            this.rbtnNombre.Name = "rbtnNombre";
-            this.rbtnNombre.Size = new System.Drawing.Size(62, 17);
-            this.rbtnNombre.TabIndex = 18;
-            this.rbtnNombre.TabStop = true;
-            this.rbtnNombre.Text = "Nombre";
-            this.rbtnNombre.UseVisualStyleBackColor = true;
+            this.rbtIgual.AutoSize = true;
+            this.rbtIgual.Checked = true;
+            this.rbtIgual.Location = new System.Drawing.Point(116, 16);
+            this.rbtIgual.Name = "rbtIgual";
+            this.rbtIgual.Size = new System.Drawing.Size(59, 20);
+            this.rbtIgual.TabIndex = 0;
+            this.rbtIgual.TabStop = true;
+            this.rbtIgual.Text = "Igual";
+            this.rbtIgual.UseVisualStyleBackColor = true;
             // 
-            // lblColumna
+            // btnBuscar
             // 
-            this.lblColumna.AutoSize = true;
-            this.lblColumna.Location = new System.Drawing.Point(6, 24);
-            this.lblColumna.Name = "lblColumna";
-            this.lblColumna.Size = new System.Drawing.Size(48, 13);
-            this.lblColumna.TabIndex = 17;
-            this.lblColumna.Text = "Columna";
+            this.btnBuscar.Location = new System.Drawing.Point(677, 140);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(75, 23);
+            this.btnBuscar.TabIndex = 0;
+            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // frmPrincipal
             // 
@@ -250,7 +253,9 @@ namespace tp_winform
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Bisque;
             this.ClientSize = new System.Drawing.Size(1082, 450);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.btnBuscar);
+            this.Controls.Add(this.gpCriterio);
+            this.Controls.Add(this.gbColumna);
             this.Controls.Add(this.btnDetalle);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnModificar);
@@ -266,8 +271,10 @@ namespace tp_winform
             this.Load += new System.EventHandler(this.frmPrincipal_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvArticulos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxArticulo)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.gbColumna.ResumeLayout(false);
+            this.gbColumna.PerformLayout();
+            this.gpCriterio.ResumeLayout(false);
+            this.gpCriterio.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -279,18 +286,18 @@ namespace tp_winform
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnDetalle;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label lblValor;
-        private System.Windows.Forms.TextBox txtBusqueda;
-        private System.Windows.Forms.RadioButton rbtnPrecio;
-        private System.Windows.Forms.RadioButton rbtnMenorQue;
-        private System.Windows.Forms.RadioButton rtbnMayorQue;
-        private System.Windows.Forms.RadioButton rbtnIgual;
-        private System.Windows.Forms.Label lblCriterio;
-        private System.Windows.Forms.RadioButton rbtnDescripcion;
-        private System.Windows.Forms.RadioButton rbtnMarca;
-        private System.Windows.Forms.RadioButton rbtnNombre;
-        private System.Windows.Forms.Label lblColumna;
+        private System.Windows.Forms.GroupBox gbColumna;
+        private System.Windows.Forms.RadioButton rbtPrecio;
+        private System.Windows.Forms.RadioButton rbtDescripcion;
+        private System.Windows.Forms.RadioButton rbtMarca;
+        private System.Windows.Forms.RadioButton rbtNombre;
+        private System.Windows.Forms.GroupBox gpCriterio;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtCriterio;
+        private System.Windows.Forms.RadioButton rbtMenor;
+        private System.Windows.Forms.RadioButton rbtMayor;
+        private System.Windows.Forms.RadioButton rbtIgual;
+        private System.Windows.Forms.Button btnBuscar;
     }
 }
 

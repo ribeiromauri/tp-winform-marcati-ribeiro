@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.SqlClient;
 using Dominio;
 
 
@@ -32,7 +33,10 @@ namespace Controlador
                     aux.Marca.Descripcion = (string)accesoDatos.Lector["Marca"];
                     aux.Categoria = new Categorias();
                     aux.Categoria.Descripcion = (string)accesoDatos.Lector["Categoria"];
-                    aux.ImagenUrl = (string)accesoDatos.Lector["ImagenUrl"];
+                    if (!(accesoDatos.Lector["ImagenUrl"] is DBNull))
+                    {
+                        aux.ImagenUrl = (string)accesoDatos.Lector["ImagenUrl"];
+                    }
                     aux.Precio = (decimal)accesoDatos.Lector["Precio"];
 
                     lista.Add(aux);
@@ -49,6 +53,30 @@ namespace Controlador
                 accesoDatos.cerrarConexion();
             }
         }
+
+        public void Agregar(Articulos nuevo)
+        {
+            AccesoDatos datos = new AccesoDatos();
+
+            try
+            {
+                datos.setConsulta("INSERT INTO ARTICULOS (Codigo, Nombre, Descripcion, IdMarca, IdCategoria, Precio, ImagenUrl) VALUES ('" + nuevo.Codigo + "', '" + nuevo.Nombre + "', '" + nuevo.Descripcion + "', @IdMarca, @IdCategoria, " + nuevo.Precio + ", @ImagenUrl)");
+                datos.setParametro("@IdMarca", nuevo.Marca.ID);
+                datos.setParametro("@IdCategoria", nuevo.Categoria.ID);
+                datos.setParametro("@ImgenUrl", nuevo.ImagenUrl);
+                datos.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
+
         public void Eliminar(int ID)
         {
             AccesoDatos datos = new AccesoDatos();

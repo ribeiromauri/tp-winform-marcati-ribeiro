@@ -38,18 +38,22 @@ namespace tp_winform
             this.lblPrecio = new System.Windows.Forms.Label();
             this.txtCodigo = new System.Windows.Forms.TextBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
-            this.txtMarca = new System.Windows.Forms.TextBox();
-            this.txtCategoria = new System.Windows.Forms.TextBox();
             this.txtURL = new System.Windows.Forms.TextBox();
             this.txtPrecio = new System.Windows.Forms.TextBox();
             this.lblAgregar = new System.Windows.Forms.Label();
             this.txtDescripcion = new System.Windows.Forms.TextBox();
+            this.btnAgregarArticulo = new System.Windows.Forms.Button();
+            this.btnCancelar = new System.Windows.Forms.Button();
+            this.cboMarca = new System.Windows.Forms.ComboBox();
+            this.cboCategoria = new System.Windows.Forms.ComboBox();
+            this.pbxArticulos = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxArticulos)).BeginInit();
             this.SuspendLayout();
             // 
             // lblCodigo
             // 
             this.lblCodigo.AutoSize = true;
-            this.lblCodigo.Location = new System.Drawing.Point(133, 85);
+            this.lblCodigo.Location = new System.Drawing.Point(41, 57);
             this.lblCodigo.Name = "lblCodigo";
             this.lblCodigo.Size = new System.Drawing.Size(40, 13);
             this.lblCodigo.TabIndex = 18;
@@ -58,7 +62,7 @@ namespace tp_winform
             // lblNombre
             // 
             this.lblNombre.AutoSize = true;
-            this.lblNombre.Location = new System.Drawing.Point(133, 113);
+            this.lblNombre.Location = new System.Drawing.Point(37, 85);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(44, 13);
             this.lblNombre.TabIndex = 19;
@@ -67,7 +71,7 @@ namespace tp_winform
             // lblDescripcion
             // 
             this.lblDescripcion.AutoSize = true;
-            this.lblDescripcion.Location = new System.Drawing.Point(133, 256);
+            this.lblDescripcion.Location = new System.Drawing.Point(18, 217);
             this.lblDescripcion.Name = "lblDescripcion";
             this.lblDescripcion.Size = new System.Drawing.Size(63, 13);
             this.lblDescripcion.TabIndex = 20;
@@ -76,7 +80,7 @@ namespace tp_winform
             // lblMarca
             // 
             this.lblMarca.AutoSize = true;
-            this.lblMarca.Location = new System.Drawing.Point(133, 143);
+            this.lblMarca.Location = new System.Drawing.Point(44, 111);
             this.lblMarca.Name = "lblMarca";
             this.lblMarca.Size = new System.Drawing.Size(37, 13);
             this.lblMarca.TabIndex = 21;
@@ -85,7 +89,7 @@ namespace tp_winform
             // lblCategoria
             // 
             this.lblCategoria.AutoSize = true;
-            this.lblCategoria.Location = new System.Drawing.Point(133, 172);
+            this.lblCategoria.Location = new System.Drawing.Point(29, 138);
             this.lblCategoria.Name = "lblCategoria";
             this.lblCategoria.Size = new System.Drawing.Size(52, 13);
             this.lblCategoria.TabIndex = 22;
@@ -94,7 +98,7 @@ namespace tp_winform
             // lblImg
             // 
             this.lblImg.AutoSize = true;
-            this.lblImg.Location = new System.Drawing.Point(133, 201);
+            this.lblImg.Location = new System.Drawing.Point(14, 165);
             this.lblImg.Name = "lblImg";
             this.lblImg.Size = new System.Drawing.Size(67, 13);
             this.lblImg.TabIndex = 23;
@@ -103,7 +107,7 @@ namespace tp_winform
             // lblPrecio
             // 
             this.lblPrecio.AutoSize = true;
-            this.lblPrecio.Location = new System.Drawing.Point(133, 228);
+            this.lblPrecio.Location = new System.Drawing.Point(44, 192);
             this.lblPrecio.Name = "lblPrecio";
             this.lblPrecio.Size = new System.Drawing.Size(37, 13);
             this.lblPrecio.TabIndex = 24;
@@ -111,50 +115,37 @@ namespace tp_winform
             // 
             // txtCodigo
             // 
-            this.txtCodigo.Location = new System.Drawing.Point(227, 85);
+            this.txtCodigo.Location = new System.Drawing.Point(87, 57);
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Size = new System.Drawing.Size(300, 20);
-            this.txtCodigo.TabIndex = 25;
+            this.txtCodigo.TabIndex = 0;
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(227, 110);
+            this.txtNombre.Location = new System.Drawing.Point(87, 82);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(300, 20);
-            this.txtNombre.TabIndex = 26;
-            // 
-            // txtMarca
-            // 
-            this.txtMarca.Location = new System.Drawing.Point(227, 140);
-            this.txtMarca.Name = "txtMarca";
-            this.txtMarca.Size = new System.Drawing.Size(300, 20);
-            this.txtMarca.TabIndex = 27;
-            // 
-            // txtCategoria
-            // 
-            this.txtCategoria.Location = new System.Drawing.Point(227, 169);
-            this.txtCategoria.Name = "txtCategoria";
-            this.txtCategoria.Size = new System.Drawing.Size(300, 20);
-            this.txtCategoria.TabIndex = 28;
+            this.txtNombre.TabIndex = 1;
             // 
             // txtURL
             // 
-            this.txtURL.Location = new System.Drawing.Point(227, 201);
+            this.txtURL.Location = new System.Drawing.Point(87, 162);
             this.txtURL.Name = "txtURL";
             this.txtURL.Size = new System.Drawing.Size(300, 20);
-            this.txtURL.TabIndex = 29;
+            this.txtURL.TabIndex = 4;
+            this.txtURL.Leave += new System.EventHandler(this.txtURL_Leave);
             // 
             // txtPrecio
             // 
-            this.txtPrecio.Location = new System.Drawing.Point(227, 228);
+            this.txtPrecio.Location = new System.Drawing.Point(87, 189);
             this.txtPrecio.Name = "txtPrecio";
             this.txtPrecio.Size = new System.Drawing.Size(300, 20);
-            this.txtPrecio.TabIndex = 30;
+            this.txtPrecio.TabIndex = 5;
             // 
             // lblAgregar
             // 
             this.lblAgregar.AutoSize = true;
-            this.lblAgregar.Location = new System.Drawing.Point(311, 44);
+            this.lblAgregar.Location = new System.Drawing.Point(171, 16);
             this.lblAgregar.Name = "lblAgregar";
             this.lblAgregar.Size = new System.Drawing.Size(119, 13);
             this.lblAgregar.TabIndex = 32;
@@ -163,24 +154,74 @@ namespace tp_winform
             // txtDescripcion
             // 
             this.txtDescripcion.BackColor = System.Drawing.Color.White;
-            this.txtDescripcion.Location = new System.Drawing.Point(227, 256);
+            this.txtDescripcion.Location = new System.Drawing.Point(87, 217);
             this.txtDescripcion.Multiline = true;
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(300, 105);
-            this.txtDescripcion.TabIndex = 33;
+            this.txtDescripcion.TabIndex = 6;
+            // 
+            // btnAgregarArticulo
+            // 
+            this.btnAgregarArticulo.Location = new System.Drawing.Point(124, 352);
+            this.btnAgregarArticulo.Name = "btnAgregarArticulo";
+            this.btnAgregarArticulo.Size = new System.Drawing.Size(97, 23);
+            this.btnAgregarArticulo.TabIndex = 7;
+            this.btnAgregarArticulo.Text = "Agregar Articulo";
+            this.btnAgregarArticulo.UseVisualStyleBackColor = true;
+            this.btnAgregarArticulo.Click += new System.EventHandler(this.btnAgregarArticulo_Click);
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Location = new System.Drawing.Point(269, 352);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
+            this.btnCancelar.TabIndex = 8;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
+            // cboMarca
+            // 
+            this.cboMarca.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboMarca.FormattingEnabled = true;
+            this.cboMarca.Location = new System.Drawing.Point(87, 108);
+            this.cboMarca.Name = "cboMarca";
+            this.cboMarca.Size = new System.Drawing.Size(121, 21);
+            this.cboMarca.TabIndex = 2;
+            // 
+            // cboCategoria
+            // 
+            this.cboCategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboCategoria.FormattingEnabled = true;
+            this.cboCategoria.Location = new System.Drawing.Point(87, 135);
+            this.cboCategoria.Name = "cboCategoria";
+            this.cboCategoria.Size = new System.Drawing.Size(121, 21);
+            this.cboCategoria.TabIndex = 3;
+            // 
+            // pbxArticulos
+            // 
+            this.pbxArticulos.Location = new System.Drawing.Point(406, 111);
+            this.pbxArticulos.Name = "pbxArticulos";
+            this.pbxArticulos.Size = new System.Drawing.Size(226, 211);
+            this.pbxArticulos.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbxArticulos.TabIndex = 33;
+            this.pbxArticulos.TabStop = false;
             // 
             // frmAgregar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Bisque;
-            this.ClientSize = new System.Drawing.Size(702, 437);
+            this.ClientSize = new System.Drawing.Size(644, 410);
+            this.Controls.Add(this.pbxArticulos);
+            this.Controls.Add(this.cboCategoria);
+            this.Controls.Add(this.cboMarca);
+            this.Controls.Add(this.btnCancelar);
+            this.Controls.Add(this.btnAgregarArticulo);
             this.Controls.Add(this.txtDescripcion);
             this.Controls.Add(this.lblAgregar);
             this.Controls.Add(this.txtPrecio);
             this.Controls.Add(this.txtURL);
-            this.Controls.Add(this.txtCategoria);
-            this.Controls.Add(this.txtMarca);
             this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.txtCodigo);
             this.Controls.Add(this.lblPrecio);
@@ -192,6 +233,8 @@ namespace tp_winform
             this.Controls.Add(this.lblCodigo);
             this.Name = "frmAgregar";
             this.Text = "frmAgregar";
+            this.Load += new System.EventHandler(this.frmAgregar_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pbxArticulos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -208,11 +251,14 @@ namespace tp_winform
         private System.Windows.Forms.Label lblPrecio;
         private System.Windows.Forms.TextBox txtCodigo;
         private System.Windows.Forms.TextBox txtNombre;
-        private System.Windows.Forms.TextBox txtMarca;
-        private System.Windows.Forms.TextBox txtCategoria;
         private System.Windows.Forms.TextBox txtURL;
         private System.Windows.Forms.TextBox txtPrecio;
         private System.Windows.Forms.Label lblAgregar;
         private System.Windows.Forms.TextBox txtDescripcion;
+        private System.Windows.Forms.Button btnAgregarArticulo;
+        private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.ComboBox cboMarca;
+        private System.Windows.Forms.ComboBox cboCategoria;
+        private System.Windows.Forms.PictureBox pbxArticulos;
     }
 }
