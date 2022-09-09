@@ -19,7 +19,7 @@ namespace Controlador
 
             try
             {
-                accesoDatos.setConsulta("SELECT A.Id, A.Codigo, A.Nombre, A.Descripcion, A.ImagenUrl, A.Precio, M.Descripcion AS Marca, C.Descripcion AS Categoria FROM ARTICULOS A INNER JOIN MARCAS M ON A.IdMarca = M.Id INNER JOIN CATEGORIAS C ON A.IdCategoria = C.Id");
+                accesoDatos.setConsulta("SELECT A.Id, A.Codigo, A.Nombre, A.Descripcion, A.ImagenUrl, A.Precio, M.Descripcion AS Marca, C.Descripcion AS Categoria, A.IdMarca, A.IdCategoria FROM ARTICULOS A INNER JOIN MARCAS M ON A.IdMarca = M.Id INNER JOIN CATEGORIAS C ON A.IdCategoria = C.Id");
                 accesoDatos.ejecutarLectura();
 
                 while (accesoDatos.Lector.Read())
@@ -30,8 +30,10 @@ namespace Controlador
                     aux.Nombre = (string)accesoDatos.Lector["Nombre"];
                     aux.Descripcion = (string)accesoDatos.Lector["Descripcion"];
                     aux.Marca = new Marcas();
+                    aux.Marca.ID = (int)accesoDatos.Lector["IdMarca"];
                     aux.Marca.Descripcion = (string)accesoDatos.Lector["Marca"];
                     aux.Categoria = new Categorias();
+                    aux.Categoria.ID = (int)accesoDatos.Lector["IdCategoria"];
                     aux.Categoria.Descripcion = (string)accesoDatos.Lector["Categoria"];
                     if (!(accesoDatos.Lector["ImagenUrl"] is DBNull))
                     {
@@ -88,6 +90,34 @@ namespace Controlador
             }
             catch (Exception ex)
             {
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
+
+        public void Modificar(Articulos art)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.setConsulta("update ARTICULOS set Codigo = @codigo, Nombre = @nombre, Descripcion = @descripcion, ImagenUrl = @imagen, Precio = @precio, IdMarca = @idMarca, IdCategoria = @idCategoria where Id = @id");
+                datos.setParametro("@codigo",art.Codigo);
+                datos.setParametro("@nombre",art.Nombre);
+                datos.setParametro("@descripcion",art.Descripcion);
+                datos.setParametro("@imagen",art.ImagenUrl);
+                datos.setParametro("@precio",art.Precio);
+                datos.setParametro("@idMarca",art.Marca.ID);
+                datos.setParametro("@idCategoria",art.Categoria.ID);
+                datos.setParametro("@id",art.ID);
+
+                datos.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+
                 throw ex;
             }
             finally

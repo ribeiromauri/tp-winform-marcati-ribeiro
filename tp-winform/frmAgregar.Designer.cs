@@ -232,7 +232,7 @@ namespace tp_winform
             this.Controls.Add(this.lblNombre);
             this.Controls.Add(this.lblCodigo);
             this.Name = "frmAgregar";
-            this.Text = "frmAgregar";
+            this.Text = "Agregar";
             this.Load += new System.EventHandler(this.frmAgregar_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbxArticulos)).EndInit();
             this.ResumeLayout(false);

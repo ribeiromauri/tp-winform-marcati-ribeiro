@@ -47,8 +47,6 @@ namespace tp_winform
             catch (Exception ex)
             {
                 pbxArticulo.Load("https://cdn.onlinewebfonts.com/svg/img_526949.png");
-                string mensaje = "Error al cargar imagen. Revisar URL";
-                MessageBox.Show(mensaje, ex.Message);
             }
         }
 
@@ -75,7 +73,9 @@ namespace tp_winform
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            frmAgregar modificar = new frmAgregar();
+            Articulos seleccionado;
+            seleccionado = (Articulos)dgvArticulos.CurrentRow.DataBoundItem;
+            frmAgregar modificar = new frmAgregar(seleccionado);
             modificar.ShowDialog();
             Cargar();
         }

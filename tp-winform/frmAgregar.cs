@@ -14,9 +14,18 @@ namespace tp_winform
 {
     public partial class frmAgregar : Form
     {
+        private Articulos articulo = null;
         public frmAgregar()
         {
             InitializeComponent();
+        }
+
+        public frmAgregar(Articulos articulo)
+        {
+            InitializeComponent();
+            this.articulo = articulo;
+            Text = "Modificacion";
+            btnAgregarArticulo.Text = "Modificar";
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -26,21 +35,34 @@ namespace tp_winform
 
         private void btnAgregarArticulo_Click(object sender, EventArgs e)
         {
-            Articulos artNuevo = new Articulos();
             ControladorArticulos controlador = new ControladorArticulos();
 
             try
             {
-                artNuevo.Codigo = txtCodigo.Text;
-                artNuevo.Nombre = txtNombre.Text;
-                artNuevo.Descripcion = txtDescripcion.Text;
-                artNuevo.Marca = (Marcas)cboMarca.SelectedItem;
-                artNuevo.Categoria = (Categorias)cboCategoria.SelectedItem;
-                artNuevo.ImagenUrl = txtURL.Text;
-                artNuevo.Precio = decimal.Parse(txtPrecio.Text);
+                if(articulo == null)
+                {
+                    articulo = new Articulos();
+                }
+                articulo.Codigo = txtCodigo.Text;
+                articulo.Nombre = txtNombre.Text;
+                articulo.Descripcion = txtDescripcion.Text;
+                articulo.Marca = (Marcas)cboMarca.SelectedItem;
+                articulo.Categoria = (Categorias)cboCategoria.SelectedItem;
+                articulo.ImagenUrl = txtURL.Text;
+                articulo.Precio = decimal.Parse(txtPrecio.Text);
 
-                controlador.Agregar(artNuevo);
-                MessageBox.Show("Se agregó con éxito");
+                if(articulo.ID != 0)
+                {
+                    controlador.Modificar(articulo);
+                    MessageBox.Show("Se modificó con éxito");
+                }
+                else
+                {
+                    controlador.Agregar(articulo);
+                    MessageBox.Show("Se agregó con éxito");
+                }
+
+
                 Close();
 
             }
@@ -57,7 +79,23 @@ namespace tp_winform
             try
             {
                 cboMarca.DataSource = marcas.listar();
+                cboMarca.ValueMember = "ID";
+                cboMarca.DisplayMember = "Descripcion";
                 cboCategoria.DataSource = categorias.listar();
+                cboCategoria.ValueMember = "ID";
+                cboCategoria.DisplayMember = "Descripcion";
+
+                if(articulo != null)
+                {
+                    txtCodigo.Text = articulo.Codigo;
+                    txtNombre.Text = articulo.Nombre;
+                    txtURL.Text = articulo.ImagenUrl;
+                    txtPrecio.Text = articulo.Precio.ToString();
+                    txtDescripcion.Text = articulo.Descripcion;
+                    CargarImagen(articulo.ImagenUrl);
+                    cboMarca.SelectedValue = articulo.Marca.ID;
+                    cboCategoria.SelectedValue = articulo.Categoria.ID;
+                }
             }
             catch (Exception ex)
             {
