@@ -35,17 +35,19 @@ namespace tp_winform
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnDetalle = new System.Windows.Forms.Button();
-            this.gbColumna = new System.Windows.Forms.GroupBox();
+            this.gbBusqueda = new System.Windows.Forms.GroupBox();
             this.gpCriterio = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtValor = new System.Windows.Forms.TextBox();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.cboColumna = new System.Windows.Forms.ComboBox();
             this.cboCriterio = new System.Windows.Forms.ComboBox();
-            this.lblBuscar = new System.Windows.Forms.Label();
+            this.lblCriterio = new System.Windows.Forms.Label();
+            this.lblColumna = new System.Windows.Forms.Label();
+            this.txtBuscar = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvArticulos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxArticulo)).BeginInit();
-            this.gbColumna.SuspendLayout();
+            this.gbBusqueda.SuspendLayout();
             this.gpCriterio.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -60,7 +62,7 @@ namespace tp_winform
             this.dgvArticulos.MultiSelect = false;
             this.dgvArticulos.Name = "dgvArticulos";
             this.dgvArticulos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvArticulos.Size = new System.Drawing.Size(644, 247);
+            this.dgvArticulos.Size = new System.Drawing.Size(654, 247);
             this.dgvArticulos.TabIndex = 5;
             this.dgvArticulos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvArticulos_CellContentClick);
             // 
@@ -113,34 +115,37 @@ namespace tp_winform
             this.btnDetalle.UseVisualStyleBackColor = true;
             this.btnDetalle.Click += new System.EventHandler(this.btnDetalle_Click);
             // 
-            // gbColumna
+            // gbBusqueda
             // 
-            this.gbColumna.Controls.Add(this.cboColumna);
-            this.gbColumna.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbColumna.Location = new System.Drawing.Point(124, 34);
-            this.gbColumna.Name = "gbColumna";
-            this.gbColumna.Size = new System.Drawing.Size(547, 54);
-            this.gbColumna.TabIndex = 15;
-            this.gbColumna.TabStop = false;
-            this.gbColumna.Text = "Columna";
+            this.gbBusqueda.Controls.Add(this.txtBuscar);
+            this.gbBusqueda.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbBusqueda.Location = new System.Drawing.Point(124, 34);
+            this.gbBusqueda.Name = "gbBusqueda";
+            this.gbBusqueda.Size = new System.Drawing.Size(654, 54);
+            this.gbBusqueda.TabIndex = 15;
+            this.gbBusqueda.TabStop = false;
+            this.gbBusqueda.Text = "Busqueda rapida";
             // 
             // gpCriterio
             // 
+            this.gpCriterio.Controls.Add(this.lblColumna);
+            this.gpCriterio.Controls.Add(this.cboColumna);
+            this.gpCriterio.Controls.Add(this.lblCriterio);
             this.gpCriterio.Controls.Add(this.cboCriterio);
             this.gpCriterio.Controls.Add(this.label1);
             this.gpCriterio.Controls.Add(this.txtValor);
             this.gpCriterio.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gpCriterio.Location = new System.Drawing.Point(124, 94);
+            this.gpCriterio.Location = new System.Drawing.Point(124, 114);
             this.gpCriterio.Name = "gpCriterio";
-            this.gpCriterio.Size = new System.Drawing.Size(547, 91);
+            this.gpCriterio.Size = new System.Drawing.Size(654, 48);
             this.gpCriterio.TabIndex = 16;
             this.gpCriterio.TabStop = false;
-            this.gpCriterio.Text = "Criterio";
+            this.gpCriterio.Text = "Busqueda avanzada";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(16, 56);
+            this.label1.Location = new System.Drawing.Point(432, 25);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(45, 16);
             this.label1.TabIndex = 27;
@@ -149,14 +154,14 @@ namespace tp_winform
             // txtValor
             // 
             this.txtValor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtValor.Location = new System.Drawing.Point(83, 56);
+            this.txtValor.Location = new System.Drawing.Point(483, 23);
             this.txtValor.Name = "txtValor";
-            this.txtValor.Size = new System.Drawing.Size(424, 22);
+            this.txtValor.Size = new System.Drawing.Size(167, 22);
             this.txtValor.TabIndex = 3;
             // 
             // btnBuscar
             // 
-            this.btnBuscar.Location = new System.Drawing.Point(677, 140);
+            this.btnBuscar.Location = new System.Drawing.Point(818, 139);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(75, 23);
             this.btnBuscar.TabIndex = 0;
@@ -168,9 +173,9 @@ namespace tp_winform
             // 
             this.cboColumna.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboColumna.FormattingEnabled = true;
-            this.cboColumna.Location = new System.Drawing.Point(83, 22);
+            this.cboColumna.Location = new System.Drawing.Point(86, 21);
             this.cboColumna.Name = "cboColumna";
-            this.cboColumna.Size = new System.Drawing.Size(424, 24);
+            this.cboColumna.Size = new System.Drawing.Size(131, 24);
             this.cboColumna.TabIndex = 0;
             this.cboColumna.SelectedIndexChanged += new System.EventHandler(this.cboColumna_SelectedIndexChanged);
             // 
@@ -178,20 +183,36 @@ namespace tp_winform
             // 
             this.cboCriterio.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboCriterio.FormattingEnabled = true;
-            this.cboCriterio.Location = new System.Drawing.Point(83, 12);
+            this.cboCriterio.Location = new System.Drawing.Point(287, 21);
             this.cboCriterio.Name = "cboCriterio";
-            this.cboCriterio.Size = new System.Drawing.Size(424, 24);
+            this.cboCriterio.Size = new System.Drawing.Size(139, 24);
             this.cboCriterio.TabIndex = 1;
             // 
-            // lblBuscar
+            // lblCriterio
             // 
-            this.lblBuscar.AutoSize = true;
-            this.lblBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBuscar.Location = new System.Drawing.Point(378, 15);
-            this.lblBuscar.Name = "lblBuscar";
-            this.lblBuscar.Size = new System.Drawing.Size(99, 20);
-            this.lblBuscar.TabIndex = 18;
-            this.lblBuscar.Text = "Busquedas";
+            this.lblCriterio.AutoSize = true;
+            this.lblCriterio.Location = new System.Drawing.Point(223, 24);
+            this.lblCriterio.Name = "lblCriterio";
+            this.lblCriterio.Size = new System.Drawing.Size(58, 16);
+            this.lblCriterio.TabIndex = 28;
+            this.lblCriterio.Text = "Criterio";
+            // 
+            // lblColumna
+            // 
+            this.lblColumna.AutoSize = true;
+            this.lblColumna.Location = new System.Drawing.Point(12, 25);
+            this.lblColumna.Name = "lblColumna";
+            this.lblColumna.Size = new System.Drawing.Size(68, 16);
+            this.lblColumna.TabIndex = 29;
+            this.lblColumna.Text = "Columna";
+            // 
+            // txtBuscar
+            // 
+            this.txtBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBuscar.Location = new System.Drawing.Point(139, 21);
+            this.txtBuscar.Name = "txtBuscar";
+            this.txtBuscar.Size = new System.Drawing.Size(414, 22);
+            this.txtBuscar.TabIndex = 30;
             // 
             // frmPrincipal
             // 
@@ -199,10 +220,9 @@ namespace tp_winform
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Bisque;
             this.ClientSize = new System.Drawing.Size(1082, 450);
-            this.Controls.Add(this.lblBuscar);
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.gpCriterio);
-            this.Controls.Add(this.gbColumna);
+            this.Controls.Add(this.gbBusqueda);
             this.Controls.Add(this.btnDetalle);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnModificar);
@@ -218,11 +238,11 @@ namespace tp_winform
             this.Load += new System.EventHandler(this.frmPrincipal_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvArticulos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxArticulo)).EndInit();
-            this.gbColumna.ResumeLayout(false);
+            this.gbBusqueda.ResumeLayout(false);
+            this.gbBusqueda.PerformLayout();
             this.gpCriterio.ResumeLayout(false);
             this.gpCriterio.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -233,14 +253,16 @@ namespace tp_winform
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnDetalle;
-        private System.Windows.Forms.GroupBox gbColumna;
+        private System.Windows.Forms.GroupBox gbBusqueda;
         private System.Windows.Forms.GroupBox gpCriterio;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtValor;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.ComboBox cboColumna;
         private System.Windows.Forms.ComboBox cboCriterio;
-        private System.Windows.Forms.Label lblBuscar;
+        private System.Windows.Forms.Label lblColumna;
+        private System.Windows.Forms.Label lblCriterio;
+        private System.Windows.Forms.TextBox txtBuscar;
     }
 }
 
