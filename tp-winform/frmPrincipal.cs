@@ -53,7 +53,12 @@ namespace tp_winform
         private void frmPrincipal_Load(object sender, EventArgs e)
         {
             ControladorArticulos controlador = new ControladorArticulos();
-            Cargar();     
+            Cargar();
+            cboColumna.Items.Add("Precio");
+            cboColumna.Items.Add("Codigo");
+            cboColumna.Items.Add("Nombre");
+            cboColumna.Items.Add("Marca");
+            cboColumna.Items.Add("Categoria");
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
@@ -108,14 +113,19 @@ namespace tp_winform
 
         SqlConnection conexion = new SqlConnection("server=.\\SQLEXPRESS; database=CATALOGO_DB; integrated security=true");
 
-        private void btnBuscar_Click(object sender, EventArgs e)
+
+        private void btnBuscar_Click(object sender, EventArgs e) 
+        { 
+
+        }
+        /*
         {
             string query;
             if (rbtNombre.Checked)
             {
                 if (rbtIgual.Checked)
                 {
-                    query = "Select * From Articulos where Nombre = '" + txtCriterio.Text + "'";
+                    query = "Select * From Articulos where Nombre = '" + txtValor.Text + "'";
                     SqlCommand comando = new SqlCommand(query, conexion);
                     SqlDataAdapter data = new SqlDataAdapter(comando);
                     DataTable tabla = new DataTable();
@@ -124,7 +134,7 @@ namespace tp_winform
                 }
                 if (rbtMayor.Checked)
                 {
-                    query = "Select * From Articulos where Nombre > '" + txtCriterio.Text + "'";
+                    query = "Select * From Articulos where Nombre > '" + txtValor.Text + "'";
                     SqlCommand comando = new SqlCommand(query, conexion);
                     SqlDataAdapter data = new SqlDataAdapter(comando);
                     DataTable tabla = new DataTable();
@@ -133,7 +143,7 @@ namespace tp_winform
                 }
                 if (rbtMenor.Checked)
                 {
-                    query = "Select * From Articulos where Nombre < '" + txtCriterio.Text + "'";
+                    query = "Select * From Articulos where Nombre < '" + txtValor.Text + "'";
                     SqlCommand comando = new SqlCommand(query, conexion);
                     SqlDataAdapter data = new SqlDataAdapter(comando);
                     DataTable tabla = new DataTable();
@@ -146,7 +156,7 @@ namespace tp_winform
             {
                 if (rbtIgual.Checked)
                 {
-                    query = "Select * From Articulos where idMarca = '" + txtCriterio.Text + "'";
+                    query = "Select * From Articulos where idMarca = '" + txtValor.Text + "'";
                     SqlCommand comando = new SqlCommand(query, conexion);
                     SqlDataAdapter data = new SqlDataAdapter(comando);
                     DataTable tabla = new DataTable();
@@ -155,7 +165,7 @@ namespace tp_winform
                 }
                 if (rbtMayor.Checked)
                 {
-                    query = "Select * From Articulos where idMarca > '" + txtCriterio.Text + "'";
+                    query = "Select * From Articulos where idMarca > '" + txtValor.Text + "'";
                     SqlCommand comando = new SqlCommand(query, conexion);
                     SqlDataAdapter data = new SqlDataAdapter(comando);
                     DataTable tabla = new DataTable();
@@ -164,7 +174,7 @@ namespace tp_winform
                 }
                 if (rbtMenor.Checked)
                 {
-                    query = "Select * From Articulos where idMarca < '" + txtCriterio.Text + "'";
+                    query = "Select * From Articulos where idMarca < '" + txtValor.Text + "'";
                     SqlCommand comando = new SqlCommand(query, conexion);
                     SqlDataAdapter data = new SqlDataAdapter(comando);
                     DataTable tabla = new DataTable();
@@ -176,7 +186,7 @@ namespace tp_winform
             {
                 if (rbtIgual.Checked)
                 {
-                    query = "Select * From Articulos where Descripcion = '" + txtCriterio.Text + "'";
+                    query = "Select * From Articulos where Descripcion = '" + txtValor.Text + "'";
                     SqlCommand comando = new SqlCommand(query, conexion);
                     SqlDataAdapter data = new SqlDataAdapter(comando);
                     DataTable tabla = new DataTable();
@@ -185,7 +195,7 @@ namespace tp_winform
                 }
                 if (rbtMayor.Checked)
                 {
-                    query = "Select * From Articulos where Descripcion > '" + txtCriterio.Text + "'";
+                    query = "Select * From Articulos where Descripcion > '" + txtValor.Text + "'";
                     SqlCommand comando = new SqlCommand(query, conexion);
                     SqlDataAdapter data = new SqlDataAdapter(comando);
                     DataTable tabla = new DataTable();
@@ -194,7 +204,7 @@ namespace tp_winform
                 }
                 if (rbtMenor.Checked)
                 {
-                    query = "Select * From Articulos where Descripcion < '" + txtCriterio.Text + "'";
+                    query = "Select * From Articulos where Descripcion < '" + txtValor.Text + "'";
                     SqlCommand comando = new SqlCommand(query, conexion);
                     SqlDataAdapter data = new SqlDataAdapter(comando);
                     DataTable tabla = new DataTable();
@@ -206,7 +216,7 @@ namespace tp_winform
             {
                 if (rbtIgual.Checked)
                 {
-                    query = "Select * From Articulos where Precio = '" + decimal.Parse(txtCriterio.Text) + "'";
+                    query = "Select * From Articulos where Precio = '" + decimal.Parse(txtValor.Text) + "'";
                     SqlCommand comando = new SqlCommand(query, conexion);
                     SqlDataAdapter data = new SqlDataAdapter(comando);
                     DataTable tabla = new DataTable();
@@ -215,7 +225,7 @@ namespace tp_winform
                 }
                 if (rbtMayor.Checked)
                 {
-                    query = "Select * From Articulos where Precio > '" + txtCriterio.Text + "'";
+                    query = "Select * From Articulos where Precio > '" + txtValor.Text + "'";
                     SqlCommand comando = new SqlCommand(query, conexion);
                     SqlDataAdapter data = new SqlDataAdapter(comando);
                     DataTable tabla = new DataTable();
@@ -224,13 +234,34 @@ namespace tp_winform
                 }
                 if (rbtMenor.Checked)
                 {
-                    query = "Select * From Articulos where Precio < '" + txtCriterio.Text + "'";
+                    query = "Select * From Articulos where Precio < '" + txtValor.Text + "'";
                     SqlCommand comando = new SqlCommand(query, conexion);
                     SqlDataAdapter data = new SqlDataAdapter(comando);
                     DataTable tabla = new DataTable();
                     data.Fill(tabla);
                     dgvArticulos.DataSource = tabla;
                 }
+            }
+        }
+        */
+
+        private void cboColumna_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string opcion = cboColumna.SelectedItem.ToString();
+            if (opcion == "Precio")
+            {
+                cboCriterio.Items.Clear();
+                cboCriterio.Items.Add("Menor a");
+                cboCriterio.Items.Add("Mayor a");
+                cboCriterio.Items.Add("Igual a");
+            }
+
+            else
+            {
+                cboCriterio.Items.Clear();
+                cboCriterio.Items.Add("Comienza con");
+                cboCriterio.Items.Add("Termina con");
+                cboCriterio.Items.Add("Contiene");
             }
         }
     }
