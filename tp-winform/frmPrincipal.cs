@@ -65,9 +65,12 @@ namespace tp_winform
 
         private void btnDetalle_Click(object sender, EventArgs e)
         {
-            Articulos seleccionado = (Articulos)dgvArticulos.CurrentRow.DataBoundItem;
-            frmDetalle detalle = new frmDetalle(seleccionado);
-            detalle.ShowDialog();
+            if(dgvArticulos.CurrentRow != null)
+            {
+                Articulos seleccionado = (Articulos)dgvArticulos.CurrentRow.DataBoundItem;
+                frmDetalle detalle = new frmDetalle(seleccionado);
+                detalle.ShowDialog();
+            }
             Cargar();
         }
 
@@ -102,8 +105,11 @@ namespace tp_winform
 
         private void dgvArticulos_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            Articulos seleccionado = (Articulos)dgvArticulos.CurrentRow.DataBoundItem;
-            CargarImagen(seleccionado.ImagenUrl);
+            if(dgvArticulos.CurrentRow != null)
+            {
+                Articulos seleccionado = (Articulos)dgvArticulos.CurrentRow.DataBoundItem;
+                CargarImagen(seleccionado.ImagenUrl);
+            }
         }
 
         SqlConnection conexion = new SqlConnection("server=.\\SQLEXPRESS; database=CATALOGO_DB; integrated security=true");
