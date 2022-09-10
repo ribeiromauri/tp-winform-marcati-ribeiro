@@ -28,14 +28,19 @@ namespace tp_winform
             {
                 listaArticulos = negocio.listar();
                 dgvArticulos.DataSource = listaArticulos;
-                dgvArticulos.Columns["ID"].Visible = false;
-                dgvArticulos.Columns["ImagenUrl"].Visible = false;
+                ocultarColumnas();
                 CargarImagen(listaArticulos[0].ImagenUrl);
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void ocultarColumnas()
+        {
+            dgvArticulos.Columns["ID"].Visible = false;
+            dgvArticulos.Columns["ImagenUrl"].Visible = false;
         }
 
         private void CargarImagen(string imagen)
@@ -81,10 +86,13 @@ namespace tp_winform
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            Articulos seleccionado;
-            seleccionado = (Articulos)dgvArticulos.CurrentRow.DataBoundItem;
-            frmAgregar modificar = new frmAgregar(seleccionado);
-            modificar.ShowDialog();
+            if(dgvArticulos.CurrentRow != null)
+            {
+                Articulos seleccionado;
+                seleccionado = (Articulos)dgvArticulos.CurrentRow.DataBoundItem;
+                frmAgregar modificar = new frmAgregar(seleccionado);
+                modificar.ShowDialog();
+            }
             Cargar();
         }
 
@@ -269,6 +277,25 @@ namespace tp_winform
                 cboCriterio.Items.Add("Termina con");
                 cboCriterio.Items.Add("Contiene");
             }
+        }
+
+        private void txtBuscar_TextChanged(object sender, EventArgs e)
+        {
+            List<Articulos> listaFiltro;
+            string filtro = txtBuscar.Text;
+
+            if (filtro != null)
+            {
+                listaFiltro = listaArticulos.FindAll(x => x.Nombre.ToUpper().Contains(filtro.ToUpper()));
+            }
+            else
+            {
+                listaFiltro = listaArticulos;
+            }
+
+            dgvArticulos.DataSource = null;
+            dgvArticulos.DataSource = listaFiltro;
+            ocultarColumnas();
         }
     }
 }

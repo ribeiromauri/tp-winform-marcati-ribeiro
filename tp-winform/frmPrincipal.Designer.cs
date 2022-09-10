@@ -36,15 +36,15 @@ namespace tp_winform
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnDetalle = new System.Windows.Forms.Button();
             this.gbBusqueda = new System.Windows.Forms.GroupBox();
+            this.txtBuscar = new System.Windows.Forms.TextBox();
             this.gpCriterio = new System.Windows.Forms.GroupBox();
+            this.lblColumna = new System.Windows.Forms.Label();
+            this.cboColumna = new System.Windows.Forms.ComboBox();
+            this.lblCriterio = new System.Windows.Forms.Label();
+            this.cboCriterio = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtValor = new System.Windows.Forms.TextBox();
             this.btnBuscar = new System.Windows.Forms.Button();
-            this.cboColumna = new System.Windows.Forms.ComboBox();
-            this.cboCriterio = new System.Windows.Forms.ComboBox();
-            this.lblCriterio = new System.Windows.Forms.Label();
-            this.lblColumna = new System.Windows.Forms.Label();
-            this.txtBuscar = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvArticulos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxArticulo)).BeginInit();
             this.gbBusqueda.SuspendLayout();
@@ -126,6 +126,15 @@ namespace tp_winform
             this.gbBusqueda.TabStop = false;
             this.gbBusqueda.Text = "Busqueda rapida";
             // 
+            // txtBuscar
+            // 
+            this.txtBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBuscar.Location = new System.Drawing.Point(139, 21);
+            this.txtBuscar.Name = "txtBuscar";
+            this.txtBuscar.Size = new System.Drawing.Size(414, 22);
+            this.txtBuscar.TabIndex = 30;
+            this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
+            // 
             // gpCriterio
             // 
             this.gpCriterio.Controls.Add(this.lblColumna);
@@ -142,12 +151,49 @@ namespace tp_winform
             this.gpCriterio.TabStop = false;
             this.gpCriterio.Text = "Busqueda avanzada";
             // 
+            // lblColumna
+            // 
+            this.lblColumna.AutoSize = true;
+            this.lblColumna.Location = new System.Drawing.Point(12, 25);
+            this.lblColumna.Name = "lblColumna";
+            this.lblColumna.Size = new System.Drawing.Size(67, 16);
+            this.lblColumna.TabIndex = 29;
+            this.lblColumna.Text = "Columna";
+            // 
+            // cboColumna
+            // 
+            this.cboColumna.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboColumna.FormattingEnabled = true;
+            this.cboColumna.Location = new System.Drawing.Point(86, 21);
+            this.cboColumna.Name = "cboColumna";
+            this.cboColumna.Size = new System.Drawing.Size(131, 24);
+            this.cboColumna.TabIndex = 0;
+            this.cboColumna.SelectedIndexChanged += new System.EventHandler(this.cboColumna_SelectedIndexChanged);
+            // 
+            // lblCriterio
+            // 
+            this.lblCriterio.AutoSize = true;
+            this.lblCriterio.Location = new System.Drawing.Point(223, 24);
+            this.lblCriterio.Name = "lblCriterio";
+            this.lblCriterio.Size = new System.Drawing.Size(57, 16);
+            this.lblCriterio.TabIndex = 28;
+            this.lblCriterio.Text = "Criterio";
+            // 
+            // cboCriterio
+            // 
+            this.cboCriterio.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboCriterio.FormattingEnabled = true;
+            this.cboCriterio.Location = new System.Drawing.Point(287, 21);
+            this.cboCriterio.Name = "cboCriterio";
+            this.cboCriterio.Size = new System.Drawing.Size(139, 24);
+            this.cboCriterio.TabIndex = 1;
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(432, 25);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(45, 16);
+            this.label1.Size = new System.Drawing.Size(44, 16);
             this.label1.TabIndex = 27;
             this.label1.Text = "Valor";
             // 
@@ -168,51 +214,6 @@ namespace tp_winform
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = true;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
-            // 
-            // cboColumna
-            // 
-            this.cboColumna.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboColumna.FormattingEnabled = true;
-            this.cboColumna.Location = new System.Drawing.Point(86, 21);
-            this.cboColumna.Name = "cboColumna";
-            this.cboColumna.Size = new System.Drawing.Size(131, 24);
-            this.cboColumna.TabIndex = 0;
-            this.cboColumna.SelectedIndexChanged += new System.EventHandler(this.cboColumna_SelectedIndexChanged);
-            // 
-            // cboCriterio
-            // 
-            this.cboCriterio.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboCriterio.FormattingEnabled = true;
-            this.cboCriterio.Location = new System.Drawing.Point(287, 21);
-            this.cboCriterio.Name = "cboCriterio";
-            this.cboCriterio.Size = new System.Drawing.Size(139, 24);
-            this.cboCriterio.TabIndex = 1;
-            // 
-            // lblCriterio
-            // 
-            this.lblCriterio.AutoSize = true;
-            this.lblCriterio.Location = new System.Drawing.Point(223, 24);
-            this.lblCriterio.Name = "lblCriterio";
-            this.lblCriterio.Size = new System.Drawing.Size(58, 16);
-            this.lblCriterio.TabIndex = 28;
-            this.lblCriterio.Text = "Criterio";
-            // 
-            // lblColumna
-            // 
-            this.lblColumna.AutoSize = true;
-            this.lblColumna.Location = new System.Drawing.Point(12, 25);
-            this.lblColumna.Name = "lblColumna";
-            this.lblColumna.Size = new System.Drawing.Size(68, 16);
-            this.lblColumna.TabIndex = 29;
-            this.lblColumna.Text = "Columna";
-            // 
-            // txtBuscar
-            // 
-            this.txtBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBuscar.Location = new System.Drawing.Point(139, 21);
-            this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(414, 22);
-            this.txtBuscar.TabIndex = 30;
             // 
             // frmPrincipal
             // 

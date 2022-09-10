@@ -50,7 +50,7 @@ namespace tp_winform
             this.lblCategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.lblCategoria.Location = new System.Drawing.Point(38, 133);
             this.lblCategoria.Name = "lblCategoria";
-            this.lblCategoria.Size = new System.Drawing.Size(67, 16);
+            this.lblCategoria.Size = new System.Drawing.Size(66, 16);
             this.lblCategoria.TabIndex = 26;
             this.lblCategoria.Text = "Categoria";
             // 
@@ -60,7 +60,7 @@ namespace tp_winform
             this.lblMarca.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMarca.Location = new System.Drawing.Point(60, 93);
             this.lblMarca.Name = "lblMarca";
-            this.lblMarca.Size = new System.Drawing.Size(46, 16);
+            this.lblMarca.Size = new System.Drawing.Size(45, 16);
             this.lblMarca.TabIndex = 25;
             this.lblMarca.Text = "Marca";
             // 
@@ -80,7 +80,7 @@ namespace tp_winform
             this.lblCodigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCodigo.Location = new System.Drawing.Point(60, 52);
             this.lblCodigo.Name = "lblCodigo";
-            this.lblCodigo.Size = new System.Drawing.Size(52, 16);
+            this.lblCodigo.Size = new System.Drawing.Size(51, 16);
             this.lblCodigo.TabIndex = 23;
             this.lblCodigo.Text = "Codigo";
             // 
@@ -90,7 +90,7 @@ namespace tp_winform
             this.lblPrecio.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.lblPrecio.Location = new System.Drawing.Point(60, 169);
             this.lblPrecio.Name = "lblPrecio";
-            this.lblPrecio.Size = new System.Drawing.Size(47, 16);
+            this.lblPrecio.Size = new System.Drawing.Size(46, 16);
             this.lblPrecio.TabIndex = 28;
             this.lblPrecio.Text = "Precio";
             // 
@@ -100,7 +100,7 @@ namespace tp_winform
             this.lblDescripcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.lblDescripcion.Location = new System.Drawing.Point(38, 216);
             this.lblDescripcion.Name = "lblDescripcion";
-            this.lblDescripcion.Size = new System.Drawing.Size(80, 16);
+            this.lblDescripcion.Size = new System.Drawing.Size(79, 16);
             this.lblDescripcion.TabIndex = 27;
             this.lblDescripcion.Text = "Descripcion";
             // 
@@ -108,6 +108,7 @@ namespace tp_winform
             // 
             this.txtCodigo.Location = new System.Drawing.Point(120, 52);
             this.txtCodigo.Name = "txtCodigo";
+            this.txtCodigo.ReadOnly = true;
             this.txtCodigo.Size = new System.Drawing.Size(122, 20);
             this.txtCodigo.TabIndex = 29;
             // 
@@ -115,6 +116,7 @@ namespace tp_winform
             // 
             this.txtMarca.Location = new System.Drawing.Point(120, 90);
             this.txtMarca.Name = "txtMarca";
+            this.txtMarca.ReadOnly = true;
             this.txtMarca.Size = new System.Drawing.Size(122, 20);
             this.txtMarca.TabIndex = 31;
             // 
@@ -122,6 +124,7 @@ namespace tp_winform
             // 
             this.txtCategoria.Location = new System.Drawing.Point(120, 131);
             this.txtCategoria.Name = "txtCategoria";
+            this.txtCategoria.ReadOnly = true;
             this.txtCategoria.Size = new System.Drawing.Size(122, 20);
             this.txtCategoria.TabIndex = 32;
             // 
@@ -129,6 +132,7 @@ namespace tp_winform
             // 
             this.txtPrecio.Location = new System.Drawing.Point(120, 167);
             this.txtPrecio.Name = "txtPrecio";
+            this.txtPrecio.ReadOnly = true;
             this.txtPrecio.Size = new System.Drawing.Size(122, 20);
             this.txtPrecio.TabIndex = 33;
             // 
@@ -138,6 +142,7 @@ namespace tp_winform
             this.txtDescripcion.Location = new System.Drawing.Point(129, 217);
             this.txtDescripcion.Multiline = true;
             this.txtDescripcion.Name = "txtDescripcion";
+            this.txtDescripcion.ReadOnly = true;
             this.txtDescripcion.Size = new System.Drawing.Size(350, 71);
             this.txtDescripcion.TabIndex = 34;
             // 
@@ -170,7 +175,7 @@ namespace tp_winform
             this.Controls.Add(this.lblCodigo);
             this.Name = "frmDetalle";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmDetalle";
+            this.Text = "Detalle";
             ((System.ComponentModel.ISupportInitialize)(this.pbxArticulo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
