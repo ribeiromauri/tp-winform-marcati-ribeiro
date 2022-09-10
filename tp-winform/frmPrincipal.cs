@@ -59,11 +59,9 @@ namespace tp_winform
         {
             ControladorArticulos controlador = new ControladorArticulos();
             Cargar();
-            cboColumna.Items.Add("Precio");
-            cboColumna.Items.Add("Codigo");
-            cboColumna.Items.Add("Nombre");
-            cboColumna.Items.Add("Marca");
-            cboColumna.Items.Add("Categoria");
+            cboCampo.Items.Add("Precio");
+            cboCampo.Items.Add("Codigo");
+            cboCampo.Items.Add("Nombre");
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
@@ -125,13 +123,9 @@ namespace tp_winform
             }
         }
 
-        SqlConnection conexion = new SqlConnection("server=.\\SQLEXPRESS; database=CATALOGO_DB; integrated security=true");
+        //SqlConnection conexion = new SqlConnection("server=.\\SQLEXPRESS; database=CATALOGO_DB; integrated security=true");
 
 
-        private void btnBuscar_Click(object sender, EventArgs e) 
-        { 
-
-        }
         /*
         {
             string query;
@@ -258,10 +252,24 @@ namespace tp_winform
             }
         }
         */
-
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            ControladorArticulos controlador = new ControladorArticulos();
+            try
+            {
+                string campo = cboCampo.SelectedText.ToString();
+                string criterio = cboCriterio.SelectedText.ToString();
+                string valor = txtValor.Text;
+                dgvArticulos.DataSource = controlador.Filtrar(campo, criterio, valor);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
         private void cboColumna_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string opcion = cboColumna.SelectedItem.ToString();
+            string opcion = cboCampo.SelectedItem.ToString();
             if (opcion == "Precio")
             {
                 cboCriterio.Items.Clear();

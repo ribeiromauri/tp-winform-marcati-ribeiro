@@ -39,7 +39,7 @@ namespace tp_winform
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.gpCriterio = new System.Windows.Forms.GroupBox();
             this.lblColumna = new System.Windows.Forms.Label();
-            this.cboColumna = new System.Windows.Forms.ComboBox();
+            this.cboCampo = new System.Windows.Forms.ComboBox();
             this.lblCriterio = new System.Windows.Forms.Label();
             this.cboCriterio = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -138,7 +138,7 @@ namespace tp_winform
             // gpCriterio
             // 
             this.gpCriterio.Controls.Add(this.lblColumna);
-            this.gpCriterio.Controls.Add(this.cboColumna);
+            this.gpCriterio.Controls.Add(this.cboCampo);
             this.gpCriterio.Controls.Add(this.lblCriterio);
             this.gpCriterio.Controls.Add(this.cboCriterio);
             this.gpCriterio.Controls.Add(this.label1);
@@ -156,26 +156,26 @@ namespace tp_winform
             this.lblColumna.AutoSize = true;
             this.lblColumna.Location = new System.Drawing.Point(12, 25);
             this.lblColumna.Name = "lblColumna";
-            this.lblColumna.Size = new System.Drawing.Size(67, 16);
+            this.lblColumna.Size = new System.Drawing.Size(68, 16);
             this.lblColumna.TabIndex = 29;
             this.lblColumna.Text = "Columna";
             // 
-            // cboColumna
+            // cboCampo
             // 
-            this.cboColumna.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboColumna.FormattingEnabled = true;
-            this.cboColumna.Location = new System.Drawing.Point(86, 21);
-            this.cboColumna.Name = "cboColumna";
-            this.cboColumna.Size = new System.Drawing.Size(131, 24);
-            this.cboColumna.TabIndex = 0;
-            this.cboColumna.SelectedIndexChanged += new System.EventHandler(this.cboColumna_SelectedIndexChanged);
+            this.cboCampo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboCampo.FormattingEnabled = true;
+            this.cboCampo.Location = new System.Drawing.Point(86, 21);
+            this.cboCampo.Name = "cboCampo";
+            this.cboCampo.Size = new System.Drawing.Size(131, 24);
+            this.cboCampo.TabIndex = 0;
+            this.cboCampo.SelectedIndexChanged += new System.EventHandler(this.cboColumna_SelectedIndexChanged);
             // 
             // lblCriterio
             // 
             this.lblCriterio.AutoSize = true;
             this.lblCriterio.Location = new System.Drawing.Point(223, 24);
             this.lblCriterio.Name = "lblCriterio";
-            this.lblCriterio.Size = new System.Drawing.Size(57, 16);
+            this.lblCriterio.Size = new System.Drawing.Size(58, 16);
             this.lblCriterio.TabIndex = 28;
             this.lblCriterio.Text = "Criterio";
             // 
@@ -193,7 +193,7 @@ namespace tp_winform
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(432, 25);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(44, 16);
+            this.label1.Size = new System.Drawing.Size(45, 16);
             this.label1.TabIndex = 27;
             this.label1.Text = "Valor";
             // 
@@ -259,7 +259,7 @@ namespace tp_winform
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtValor;
         private System.Windows.Forms.Button btnBuscar;
-        private System.Windows.Forms.ComboBox cboColumna;
+        private System.Windows.Forms.ComboBox cboCampo;
         private System.Windows.Forms.ComboBox cboCriterio;
         private System.Windows.Forms.Label lblColumna;
         private System.Windows.Forms.Label lblCriterio;
