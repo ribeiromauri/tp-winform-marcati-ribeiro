@@ -43,7 +43,7 @@ namespace tp_winform
             this.lblCriterio = new System.Windows.Forms.Label();
             this.cboCriterio = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtValor = new System.Windows.Forms.TextBox();
+            this.txtFiltroAvanzado = new System.Windows.Forms.TextBox();
             this.btnBuscar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvArticulos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxArticulo)).BeginInit();
@@ -142,7 +142,7 @@ namespace tp_winform
             this.gpCriterio.Controls.Add(this.lblCriterio);
             this.gpCriterio.Controls.Add(this.cboCriterio);
             this.gpCriterio.Controls.Add(this.label1);
-            this.gpCriterio.Controls.Add(this.txtValor);
+            this.gpCriterio.Controls.Add(this.txtFiltroAvanzado);
             this.gpCriterio.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gpCriterio.Location = new System.Drawing.Point(124, 114);
             this.gpCriterio.Name = "gpCriterio";
@@ -197,13 +197,13 @@ namespace tp_winform
             this.label1.TabIndex = 27;
             this.label1.Text = "Valor";
             // 
-            // txtValor
+            // txtFiltroAvanzado
             // 
-            this.txtValor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtValor.Location = new System.Drawing.Point(483, 23);
-            this.txtValor.Name = "txtValor";
-            this.txtValor.Size = new System.Drawing.Size(167, 22);
-            this.txtValor.TabIndex = 3;
+            this.txtFiltroAvanzado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFiltroAvanzado.Location = new System.Drawing.Point(483, 23);
+            this.txtFiltroAvanzado.Name = "txtFiltroAvanzado";
+            this.txtFiltroAvanzado.Size = new System.Drawing.Size(167, 22);
+            this.txtFiltroAvanzado.TabIndex = 3;
             // 
             // btnBuscar
             // 
@@ -257,7 +257,7 @@ namespace tp_winform
         private System.Windows.Forms.GroupBox gbBusqueda;
         private System.Windows.Forms.GroupBox gpCriterio;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtValor;
+        private System.Windows.Forms.TextBox txtFiltroAvanzado;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.ComboBox cboCampo;
         private System.Windows.Forms.ComboBox cboCriterio;
