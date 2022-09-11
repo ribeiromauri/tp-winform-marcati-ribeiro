@@ -19,8 +19,7 @@ namespace Controlador
 
             try
             {
-                accesoDatos.setConsulta("SELECT A.Id, A.Codigo, A.Nombre, A.Descripcion, A.ImagenUrl, A.Precio, M.Descripcion AS Marca, C.Descripcion AS Categoria, A.IdMarca, A.IdCategoria FROM ARTICULOS A, MARCAS M, CATEGORIAS C WHERE A.IdCategoria = C.Id AND A.IdMarca = M.Id");
-                //accesoDatos.setConsulta("SELECT A.Id, A.Codigo, A.Nombre, A.Descripcion, A.ImagenUrl, A.Precio, M.Descripcion AS Marca, C.Descripcion AS Categoria, A.IdMarca, A.IdCategoria FROM ARTICULOS A INNER JOIN MARCAS M ON A.IdMarca = M.Id INNER JOIN CATEGORIAS C ON A.IdCategoria = C.Id");
+                accesoDatos.setConsulta("SELECT A.Id, A.Codigo, A.Nombre, A.Descripcion, A.ImagenUrl, A.Precio, M.Descripcion AS Marca, C.Descripcion AS Categoria, A.IdMarca, A.IdCategoria FROM ARTICULOS A INNER JOIN MARCAS M ON A.IdMarca = M.Id INNER JOIN CATEGORIAS C ON A.IdCategoria = C.Id");
                 accesoDatos.ejecutarLectura();
 
                 while (accesoDatos.Lector.Read())
@@ -127,58 +126,93 @@ namespace Controlador
             }
         }
 
-        public List<Articulos> Filtrar(string columna, string criterio, string valor)
+        public List<Articulos> Filtrar(string campo, string criterio, string filtro)
         {
+
             List<Articulos> lista = new List<Articulos>();
-            AccesoDatos accesoDatos = new AccesoDatos();
+            AccesoDatos datos = new AccesoDatos();
             try
             {
-                string consulta = "SELECT A.Id, A.Codigo, A.Nombre, A.Descripcion, A.ImagenUrl, A.Precio, M.Descripcion Marca, C.Descripcion Categoria, A.IdMarca, A.IdCategoria FROM ARTICULOS A, MARCAS M, CATEGORIAS C WHERE A.IdCategoria = C.Id AND A.IdMarca = M.Id AND ";
-
-                //faltan los otros criterios, pero la consulta siempre tira error. Seleccionar precio < a + valor
-                if(columna == "Precio")
+                string consulta = "SELECT A.Id, A.Codigo, A.Nombre, A.Descripcion, A.ImagenUrl, A.Precio, M.Descripcion Marca, C.Descripcion Categoria FROM ARTICULOS A INNER JOIN MARCAS M ON A.IdMarca = M.Id INNER JOIN CATEGORIAS C ON A.IdCategoria = C.Id WHERE ";
+                if (campo == "Codigo")
                 {
-                    if(criterio == "Menor a")
+                    switch (criterio)
                     {
-                        consulta += "A.Precio = " + valor;
+                        case "Comienza con":
+                            consulta += "A.Codigo like '" + filtro + "%'";
+                            break;
+                        case "Termina con":
+                            consulta += "A.Codigo like '%" + filtro + "'";
+                            break;
+                        case "Igual a":
+                            consulta += "A.Codigo like '%" + filtro + "%'";
+                            break;
+                        default:
+                            break;
                     }
                 }
 
+                else if(campo == "Nombre") 
+                {
+                    switch (criterio)
+                    {
+                        case "Comienza con":
+                            consulta += "A.Nombre like '" + filtro + "%'";
+                            break;
+                        case "Termina con":
+                            consulta += "A.Nombre like '%" + filtro + "'";
+                            break;
+                        case "Igual a":
+                            consulta += "A.Nombre like '%" + filtro + "%'";
+                            break;
+                        default:
+                            break;
+                    }
+                }
 
-                accesoDatos.setConsulta(consulta);
-                accesoDatos.ejecutarLectura();
+                else {
+                    switch (criterio)
+                    {
+                        case "Menor a":
+                            consulta += "A.Precio <" + filtro;
+                            break;
+                        case "Mayor a":
+                            consulta += "A.Precio >" + filtro;
+                            break;
+                        case "Igual a":
+                            consulta += "A.Precio =" + filtro;
+                            break;
+                    }
+                }
 
-                while (accesoDatos.Lector.Read())
+                datos.setConsulta(consulta);
+                datos.ejecutarLectura();
+                while (datos.Lector.Read())
                 {
                     Articulos aux = new Articulos();
-                    aux.ID = (int)accesoDatos.Lector["ID"];
-                    aux.Codigo = (string)accesoDatos.Lector["Codigo"];
-                    aux.Nombre = (string)accesoDatos.Lector["Nombre"];
-                    aux.Descripcion = (string)accesoDatos.Lector["Descripcion"];
+                    aux.ID = (int)datos.Lector["ID"];
+                    aux.Codigo = (string)datos.Lector["Codigo"];
+                    aux.Nombre = (string)datos.Lector["Nombre"];
+                    aux.Descripcion = (string)datos.Lector["Descripcion"];
                     aux.Marca = new Marcas();
-                    aux.Marca.ID = (int)accesoDatos.Lector["IdMarca"];
-                    aux.Marca.Descripcion = (string)accesoDatos.Lector["Marca"];
+                    aux.Marca.Descripcion = (string)datos.Lector["Marca"];
                     aux.Categoria = new Categorias();
-                    aux.Categoria.ID = (int)accesoDatos.Lector["IdCategoria"];
-                    aux.Categoria.Descripcion = (string)accesoDatos.Lector["Categoria"];
-                    if (!(accesoDatos.Lector["ImagenUrl"] is DBNull))
-                    {
-                        aux.ImagenUrl = (string)accesoDatos.Lector["ImagenUrl"];
-                    }
-                    aux.Precio = (decimal)accesoDatos.Lector["Precio"];
+                    aux.Categoria.Descripcion = (string)datos.Lector["Categoria"];
+                    aux.ImagenUrl = (string)datos.Lector["ImagenUrl"];
+                    aux.Precio = (decimal)datos.Lector["Precio"];
+
+
 
                     lista.Add(aux);
+
                 }
 
                 return lista;
             }
             catch (Exception ex)
             {
+
                 throw ex;
-            }
-            finally
-            {
-                accesoDatos.cerrarConexion();
             }
         }
     }

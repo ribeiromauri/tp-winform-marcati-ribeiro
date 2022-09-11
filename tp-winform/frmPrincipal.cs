@@ -252,21 +252,6 @@ namespace tp_winform
             }
         }
         */
-        private void btnBuscar_Click(object sender, EventArgs e)
-        {
-            ControladorArticulos controlador = new ControladorArticulos();
-            try
-            {
-                string campo = cboCampo.SelectedText.ToString();
-                string criterio = cboCriterio.SelectedText.ToString();
-                string valor = txtValor.Text;
-                dgvArticulos.DataSource = controlador.Filtrar(campo, criterio, valor);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
-            }
-        }
         private void cboColumna_SelectedIndexChanged(object sender, EventArgs e)
         {
             string opcion = cboCampo.SelectedItem.ToString();
@@ -304,6 +289,21 @@ namespace tp_winform
             dgvArticulos.DataSource = null;
             dgvArticulos.DataSource = listaFiltro;
             ocultarColumnas();
+        }
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            ControladorArticulos negocio = new ControladorArticulos();
+            try
+            {
+                string campo = cboCampo.SelectedItem.ToString();
+                string criterio = cboCriterio.SelectedItem.ToString();
+                string filtro = txtFiltroAvanzado.Text;
+                dgvArticulos.DataSource = negocio.Filtrar(campo, criterio, filtro);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }
