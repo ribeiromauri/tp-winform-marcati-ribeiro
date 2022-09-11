@@ -148,6 +148,7 @@ namespace tp_winform
             // 
             // pbxArticulo
             // 
+            this.pbxArticulo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pbxArticulo.Location = new System.Drawing.Point(268, 49);
             this.pbxArticulo.Name = "pbxArticulo";
             this.pbxArticulo.Size = new System.Drawing.Size(211, 162);
