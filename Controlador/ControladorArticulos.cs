@@ -133,7 +133,7 @@ namespace Controlador
             AccesoDatos datos = new AccesoDatos();
             try
             {
-                string consulta = "SELECT A.Id, A.Codigo, A.Nombre, A.Descripcion, A.ImagenUrl, A.Precio, M.Descripcion Marca, C.Descripcion Categoria FROM ARTICULOS A INNER JOIN MARCAS M ON A.IdMarca = M.Id INNER JOIN CATEGORIAS C ON A.IdCategoria = C.Id WHERE ";
+                string consulta = "SELECT A.Id, A.Codigo, A.Nombre, A.Descripcion, A.ImagenUrl, A.Precio, M.Descripcion as Marca, C.Descripcion as Categoria FROM ARTICULOS A INNER JOIN MARCAS M ON A.IdMarca = M.Id INNER JOIN CATEGORIAS C ON A.IdCategoria = C.Id WHERE ";
                 if (campo == "Codigo")
                 {
                     switch (criterio)
@@ -144,14 +144,11 @@ namespace Controlador
                         case "Termina con":
                             consulta += "A.Codigo like '%" + filtro + "'";
                             break;
-                        case "Igual a":
+                        case "Contiene":
                             consulta += "A.Codigo like '%" + filtro + "%'";
-                            break;
-                        default:
                             break;
                     }
                 }
-
                 else if(campo == "Nombre") 
                 {
                     switch (criterio)
@@ -162,26 +159,30 @@ namespace Controlador
                         case "Termina con":
                             consulta += "A.Nombre like '%" + filtro + "'";
                             break;
-                        case "Igual a":
+                        case "Contiene":
                             consulta += "A.Nombre like '%" + filtro + "%'";
-                            break;
-                        default:
                             break;
                     }
                 }
-
                 else {
-                    switch (criterio)
+                    if (!(string.IsNullOrEmpty(filtro)))
                     {
-                        case "Menor a":
-                            consulta += "A.Precio <" + filtro;
-                            break;
-                        case "Mayor a":
-                            consulta += "A.Precio >" + filtro;
-                            break;
-                        case "Igual a":
-                            consulta += "A.Precio =" + filtro;
-                            break;
+                        switch (criterio)
+                        {
+                            case "Menor a":
+                                consulta += "A.Precio <" + filtro;
+                                break;
+                            case "Mayor a":
+                                consulta += "A.Precio >" + filtro;
+                                break;
+                            case "Igual a":
+                                consulta += "A.Precio =" + filtro;
+                                break;
+                        }
+                    }
+                    else
+                    {
+                        consulta += "A.Precio like '%'";
                     }
                 }
 
@@ -198,20 +199,20 @@ namespace Controlador
                     aux.Marca.Descripcion = (string)datos.Lector["Marca"];
                     aux.Categoria = new Categorias();
                     aux.Categoria.Descripcion = (string)datos.Lector["Categoria"];
-                    aux.ImagenUrl = (string)datos.Lector["ImagenUrl"];
+                    if (!(datos.Lector["ImagenUrl"] is DBNull))
+                    {
+                        aux.ImagenUrl = (string)datos.Lector["ImagenUrl"];
+                    }
                     aux.Precio = (decimal)datos.Lector["Precio"];
 
 
-
                     lista.Add(aux);
-
                 }
 
                 return lista;
             }
             catch (Exception ex)
             {
-
                 throw ex;
             }
         }
