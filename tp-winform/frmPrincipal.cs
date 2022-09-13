@@ -73,11 +73,16 @@ namespace tp_winform
 
         private void btnDetalle_Click(object sender, EventArgs e)
         {
-            if(dgvArticulos.CurrentRow != null)
+            if (dgvArticulos.CurrentRow != null)
             {
                 Articulos seleccionado = (Articulos)dgvArticulos.CurrentRow.DataBoundItem;
                 frmDetalle detalle = new frmDetalle(seleccionado);
                 detalle.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("No hay ningún articulo seleccionado");
+                return;
             }
             Cargar();
         }
@@ -100,7 +105,12 @@ namespace tp_winform
             Articulos seleccionado; 
             try
             {
-                DialogResult eliminar = MessageBox.Show("¿Eliminar registro?", "Eliminando registro", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (dgvArticulos.CurrentRow == null)
+                {
+                    MessageBox.Show("No hay ningún articulo seleccionado");
+                    return;
+                }
+                DialogResult eliminar = MessageBox.Show("¿Eliminar articulo?", "Eliminando articulo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (eliminar == DialogResult.Yes)
                 {
                     seleccionado = (Articulos)dgvArticulos.CurrentRow.DataBoundItem;
@@ -161,12 +171,42 @@ namespace tp_winform
             dgvArticulos.DataSource = listaFiltro;
             ocultarColumnas();
         }
+
+        private bool validacionFiltro()
+        {
+            if(cboCampo.SelectedIndex < 0)
+            {
+                MessageBox.Show("Seleccione una columna");
+                return true;
+            }
+            if(cboCriterio.SelectedIndex < 0)
+            {
+                MessageBox.Show("Seleccione un criterio");
+                return true;
+            }
+            if(cboCampo.SelectedItem.ToString() == "Precio")
+            {
+                if (string.IsNullOrEmpty(txtFiltroAvanzado.Text))
+                {
+                    MessageBox.Show("Completar campo numerico");
+                    return true;
+                }
+                if (!(soloNumeros(txtFiltroAvanzado.Text)))
+                {
+                    MessageBox.Show("Busqueda por precio solo acepta valores numericos");
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             ControladorArticulos negocio = new ControladorArticulos();
             try
             {
-                if (validarFiltro())
+                if (validacionFiltro())
                 {
                     return;
                 }
@@ -181,33 +221,6 @@ namespace tp_winform
             }
         }
 
-        private bool validarFiltro()
-        {
-            if(cboCampo.SelectedIndex < 0)
-            {
-                MessageBox.Show("Seleccione columna a filtrar");
-                return true;
-            }
-            if (cboCriterio.SelectedIndex < 0)
-            {
-                MessageBox.Show("Seleccione criterio a filtrar");
-                return true;
-            }
-            if(cboCampo.SelectedItem.ToString() == "Precio")
-            {
-                if (string.IsNullOrEmpty(txtFiltroAvanzado.Text))
-                {
-                    MessageBox.Show("Completar campo numerico");
-                    return true;
-                }
-                if (!(soloNumeros(txtFiltroAvanzado.Text)))
-                {
-                    MessageBox.Show("Solo acepta valores numericos");
-                    return true;
-                }
-            }
-            return false;
-        }
         private bool soloNumeros(string cadena)
         {
             foreach (char caracter in cadena)

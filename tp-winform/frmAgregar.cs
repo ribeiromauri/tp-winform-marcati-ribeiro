@@ -9,12 +9,16 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Dominio;
 using Controlador;
+using System.IO;
+using System.Configuration;
 
 namespace tp_winform
 {
     public partial class frmAgregar : Form
     {
         private Articulos articulo = null;
+        private OpenFileDialog archivo = null;
+
         public frmAgregar()
         {
             InitializeComponent();
@@ -62,6 +66,10 @@ namespace tp_winform
                     MessageBox.Show("Se agregó con éxito");
                 }
 
+                if (archivo != null && !(txtURL.Text.ToUpper().Contains("HTTP")))
+                {
+                    File.Copy(archivo.FileName, ConfigurationManager.AppSettings["imagenes-articulos"] + archivo.SafeFileName);
+                }
 
                 Close();
 
@@ -120,6 +128,15 @@ namespace tp_winform
             }
         }
 
-        
+        private void btnAltaImagen_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog archivo = new OpenFileDialog();
+            archivo.Filter = "jpg|*.jpg;|png|*.png";
+            if(archivo.ShowDialog() == DialogResult.OK)
+            {
+                txtURL.Text = archivo.FileName;
+                CargarImagen(archivo.FileName);
+            }
+        }
     }
 }

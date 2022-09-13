@@ -48,7 +48,7 @@ namespace tp_winform
             // 
             this.lblCategoria.AutoSize = true;
             this.lblCategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.lblCategoria.Location = new System.Drawing.Point(38, 133);
+            this.lblCategoria.Location = new System.Drawing.Point(32, 131);
             this.lblCategoria.Name = "lblCategoria";
             this.lblCategoria.Size = new System.Drawing.Size(67, 16);
             this.lblCategoria.TabIndex = 26;
@@ -58,7 +58,7 @@ namespace tp_winform
             // 
             this.lblMarca.AutoSize = true;
             this.lblMarca.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMarca.Location = new System.Drawing.Point(60, 93);
+            this.lblMarca.Location = new System.Drawing.Point(53, 91);
             this.lblMarca.Name = "lblMarca";
             this.lblMarca.Size = new System.Drawing.Size(46, 16);
             this.lblMarca.TabIndex = 25;
@@ -78,7 +78,7 @@ namespace tp_winform
             // 
             this.lblCodigo.AutoSize = true;
             this.lblCodigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCodigo.Location = new System.Drawing.Point(60, 52);
+            this.lblCodigo.Location = new System.Drawing.Point(47, 50);
             this.lblCodigo.Name = "lblCodigo";
             this.lblCodigo.Size = new System.Drawing.Size(52, 16);
             this.lblCodigo.TabIndex = 23;
@@ -88,7 +88,7 @@ namespace tp_winform
             // 
             this.lblPrecio.AutoSize = true;
             this.lblPrecio.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.lblPrecio.Location = new System.Drawing.Point(60, 169);
+            this.lblPrecio.Location = new System.Drawing.Point(52, 167);
             this.lblPrecio.Name = "lblPrecio";
             this.lblPrecio.Size = new System.Drawing.Size(47, 16);
             this.lblPrecio.TabIndex = 28;
@@ -98,7 +98,7 @@ namespace tp_winform
             // 
             this.lblDescripcion.AutoSize = true;
             this.lblDescripcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.lblDescripcion.Location = new System.Drawing.Point(38, 216);
+            this.lblDescripcion.Location = new System.Drawing.Point(19, 215);
             this.lblDescripcion.Name = "lblDescripcion";
             this.lblDescripcion.Size = new System.Drawing.Size(80, 16);
             this.lblDescripcion.TabIndex = 27;
@@ -106,7 +106,7 @@ namespace tp_winform
             // 
             // txtCodigo
             // 
-            this.txtCodigo.Location = new System.Drawing.Point(120, 52);
+            this.txtCodigo.Location = new System.Drawing.Point(104, 50);
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.ReadOnly = true;
             this.txtCodigo.Size = new System.Drawing.Size(122, 20);
@@ -114,7 +114,7 @@ namespace tp_winform
             // 
             // txtMarca
             // 
-            this.txtMarca.Location = new System.Drawing.Point(120, 90);
+            this.txtMarca.Location = new System.Drawing.Point(104, 88);
             this.txtMarca.Name = "txtMarca";
             this.txtMarca.ReadOnly = true;
             this.txtMarca.Size = new System.Drawing.Size(122, 20);
@@ -122,7 +122,7 @@ namespace tp_winform
             // 
             // txtCategoria
             // 
-            this.txtCategoria.Location = new System.Drawing.Point(120, 131);
+            this.txtCategoria.Location = new System.Drawing.Point(104, 129);
             this.txtCategoria.Name = "txtCategoria";
             this.txtCategoria.ReadOnly = true;
             this.txtCategoria.Size = new System.Drawing.Size(122, 20);
@@ -130,7 +130,7 @@ namespace tp_winform
             // 
             // txtPrecio
             // 
-            this.txtPrecio.Location = new System.Drawing.Point(120, 167);
+            this.txtPrecio.Location = new System.Drawing.Point(104, 165);
             this.txtPrecio.Name = "txtPrecio";
             this.txtPrecio.ReadOnly = true;
             this.txtPrecio.Size = new System.Drawing.Size(122, 20);
@@ -139,7 +139,7 @@ namespace tp_winform
             // txtDescripcion
             // 
             this.txtDescripcion.BackColor = System.Drawing.Color.White;
-            this.txtDescripcion.Location = new System.Drawing.Point(129, 217);
+            this.txtDescripcion.Location = new System.Drawing.Point(104, 215);
             this.txtDescripcion.Multiline = true;
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.ReadOnly = true;
@@ -149,7 +149,7 @@ namespace tp_winform
             // pbxArticulo
             // 
             this.pbxArticulo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pbxArticulo.Location = new System.Drawing.Point(268, 49);
+            this.pbxArticulo.Location = new System.Drawing.Point(243, 47);
             this.pbxArticulo.Name = "pbxArticulo";
             this.pbxArticulo.Size = new System.Drawing.Size(211, 162);
             this.pbxArticulo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -161,7 +161,7 @@ namespace tp_winform
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Bisque;
-            this.ClientSize = new System.Drawing.Size(516, 298);
+            this.ClientSize = new System.Drawing.Size(474, 298);
             this.Controls.Add(this.pbxArticulo);
             this.Controls.Add(this.txtDescripcion);
             this.Controls.Add(this.txtPrecio);
@@ -174,10 +174,15 @@ namespace tp_winform
             this.Controls.Add(this.lblMarca);
             this.Controls.Add(this.lblNombre);
             this.Controls.Add(this.lblCodigo);
+
+            this.MaximumSize = new System.Drawing.Size(490, 337);
+            this.MinimumSize = new System.Drawing.Size(490, 337);
+
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(532, 337);
             this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(532, 337);
+
             this.Name = "frmDetalle";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Detalle";
