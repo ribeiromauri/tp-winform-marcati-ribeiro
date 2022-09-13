@@ -119,5 +119,7 @@ namespace tp_winform
                 pbxArticulos.Load("https://cdn.onlinewebfonts.com/svg/img_526949.png");
             }
         }
+
+        
     }
 }
