@@ -47,6 +47,7 @@ namespace tp_winform
             this.cboCategoria = new System.Windows.Forms.ComboBox();
             this.pbxArticulos = new System.Windows.Forms.PictureBox();
             this.lblImagen = new System.Windows.Forms.Label();
+            this.btnAltaImagen = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pbxArticulos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -124,21 +125,21 @@ namespace tp_winform
             // 
             this.txtCodigo.Location = new System.Drawing.Point(87, 48);
             this.txtCodigo.Name = "txtCodigo";
-            this.txtCodigo.Size = new System.Drawing.Size(300, 20);
+            this.txtCodigo.Size = new System.Drawing.Size(285, 20);
             this.txtCodigo.TabIndex = 0;
             // 
             // txtNombre
             // 
             this.txtNombre.Location = new System.Drawing.Point(87, 73);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(300, 20);
+            this.txtNombre.Size = new System.Drawing.Size(285, 20);
             this.txtNombre.TabIndex = 1;
             // 
             // txtURL
             // 
             this.txtURL.Location = new System.Drawing.Point(87, 153);
             this.txtURL.Name = "txtURL";
-            this.txtURL.Size = new System.Drawing.Size(300, 20);
+            this.txtURL.Size = new System.Drawing.Size(285, 20);
             this.txtURL.TabIndex = 4;
             this.txtURL.Leave += new System.EventHandler(this.txtURL_Leave);
             // 
@@ -146,7 +147,7 @@ namespace tp_winform
             // 
             this.txtPrecio.Location = new System.Drawing.Point(87, 180);
             this.txtPrecio.Name = "txtPrecio";
-            this.txtPrecio.Size = new System.Drawing.Size(300, 20);
+            this.txtPrecio.Size = new System.Drawing.Size(285, 20);
             this.txtPrecio.TabIndex = 5;
             // 
             // txtDescripcion
@@ -155,7 +156,7 @@ namespace tp_winform
             this.txtDescripcion.Location = new System.Drawing.Point(87, 208);
             this.txtDescripcion.Multiline = true;
             this.txtDescripcion.Name = "txtDescripcion";
-            this.txtDescripcion.Size = new System.Drawing.Size(300, 105);
+            this.txtDescripcion.Size = new System.Drawing.Size(285, 105);
             this.txtDescripcion.TabIndex = 6;
             // 
             // btnAgregarArticulo
@@ -217,12 +218,24 @@ namespace tp_winform
             this.lblImagen.TabIndex = 34;
             this.lblImagen.Text = "Imagen";
             // 
+            // btnAltaImagen
+            // 
+            this.btnAltaImagen.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAltaImagen.Location = new System.Drawing.Point(378, 153);
+            this.btnAltaImagen.Name = "btnAltaImagen";
+            this.btnAltaImagen.Size = new System.Drawing.Size(22, 23);
+            this.btnAltaImagen.TabIndex = 35;
+            this.btnAltaImagen.Text = "+";
+            this.btnAltaImagen.UseVisualStyleBackColor = true;
+            this.btnAltaImagen.Click += new System.EventHandler(this.btnAltaImagen_Click);
+            // 
             // frmAgregar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Bisque;
             this.ClientSize = new System.Drawing.Size(648, 410);
+            this.Controls.Add(this.btnAltaImagen);
             this.Controls.Add(this.lblImagen);
             this.Controls.Add(this.pbxArticulos);
             this.Controls.Add(this.cboCategoria);
@@ -270,5 +283,6 @@ namespace tp_winform
         private System.Windows.Forms.ComboBox cboCategoria;
         private System.Windows.Forms.PictureBox pbxArticulos;
         private System.Windows.Forms.Label lblImagen;
+        private System.Windows.Forms.Button btnAltaImagen;
     }
 }

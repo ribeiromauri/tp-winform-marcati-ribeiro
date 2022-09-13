@@ -124,7 +124,7 @@ namespace tp_winform
             this.gbBusqueda.Size = new System.Drawing.Size(654, 54);
             this.gbBusqueda.TabIndex = 15;
             this.gbBusqueda.TabStop = false;
-            this.gbBusqueda.Text = "Busqueda rapida";
+            this.gbBusqueda.Text = "Busqueda por nombre";
             // 
             // txtBuscar
             // 
@@ -156,7 +156,7 @@ namespace tp_winform
             this.lblColumna.AutoSize = true;
             this.lblColumna.Location = new System.Drawing.Point(12, 25);
             this.lblColumna.Name = "lblColumna";
-            this.lblColumna.Size = new System.Drawing.Size(68, 16);
+            this.lblColumna.Size = new System.Drawing.Size(67, 16);
             this.lblColumna.TabIndex = 29;
             this.lblColumna.Text = "Columna";
             // 
@@ -175,7 +175,7 @@ namespace tp_winform
             this.lblCriterio.AutoSize = true;
             this.lblCriterio.Location = new System.Drawing.Point(223, 24);
             this.lblCriterio.Name = "lblCriterio";
-            this.lblCriterio.Size = new System.Drawing.Size(58, 16);
+            this.lblCriterio.Size = new System.Drawing.Size(57, 16);
             this.lblCriterio.TabIndex = 28;
             this.lblCriterio.Text = "Criterio";
             // 
@@ -193,7 +193,7 @@ namespace tp_winform
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(432, 25);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(45, 16);
+            this.label1.Size = new System.Drawing.Size(44, 16);
             this.label1.TabIndex = 27;
             this.label1.Text = "Valor";
             // 

@@ -73,11 +73,16 @@ namespace tp_winform
 
         private void btnDetalle_Click(object sender, EventArgs e)
         {
-            if(dgvArticulos.CurrentRow != null)
+            if (dgvArticulos.CurrentRow != null)
             {
                 Articulos seleccionado = (Articulos)dgvArticulos.CurrentRow.DataBoundItem;
                 frmDetalle detalle = new frmDetalle(seleccionado);
                 detalle.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("No hay ningún articulo seleccionado");
+                return;
             }
             Cargar();
         }
@@ -100,7 +105,12 @@ namespace tp_winform
             Articulos seleccionado; 
             try
             {
-                DialogResult eliminar = MessageBox.Show("¿Eliminar registro?", "Eliminando registro", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (dgvArticulos.CurrentRow == null)
+                {
+                    MessageBox.Show("No hay ningún articulo seleccionado");
+                    return;
+                }
+                DialogResult eliminar = MessageBox.Show("¿Eliminar articulo?", "Eliminando articulo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (eliminar == DialogResult.Yes)
                 {
                     seleccionado = (Articulos)dgvArticulos.CurrentRow.DataBoundItem;
@@ -161,11 +171,32 @@ namespace tp_winform
             dgvArticulos.DataSource = listaFiltro;
             ocultarColumnas();
         }
+
+        private bool validacionFiltro()
+        {
+            if(cboCampo.SelectedIndex < 0)
+            {
+                MessageBox.Show("Seleccione un campo");
+                return true;
+            }
+            if(cboCriterio.SelectedIndex < 0)
+            {
+                MessageBox.Show("Seleccione un criterio");
+                return true;
+            }
+
+            return false;
+        }
+
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             ControladorArticulos negocio = new ControladorArticulos();
             try
             {
+                if (validacionFiltro())
+                {
+                    return;
+                }
                 string campo = cboCampo.SelectedItem.ToString();
                 string criterio = cboCriterio.SelectedItem.ToString();
                 string filtro = txtFiltroAvanzado.Text;
