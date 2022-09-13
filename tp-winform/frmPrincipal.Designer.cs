@@ -231,7 +231,9 @@ namespace tp_winform
             this.Controls.Add(this.pbxArticulo);
             this.Controls.Add(this.dgvArticulos);
             this.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(1098, 489);
+            this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(1098, 489);
             this.Name = "frmPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
