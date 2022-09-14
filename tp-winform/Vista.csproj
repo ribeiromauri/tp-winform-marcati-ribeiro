@@ -53,11 +53,23 @@
     <Compile Include="frmAgregarCategoria.Designer.cs">
       <DependentUpon>frmAgregarCategoria.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmAgregarMarca.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAgregarMarca.Designer.cs">
+      <DependentUpon>frmAgregarMarca.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmMenuCategorias.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmMenuCategorias.Designer.cs">
       <DependentUpon>frmMenuCategorias.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMenuMarcas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMenuMarcas.Designer.cs">
+      <DependentUpon>frmMenuMarcas.cs</DependentUpon>
     </Compile>
     <Compile Include="frmPrincipal.cs">
       <SubType>Form</SubType>
@@ -82,8 +94,14 @@
     <EmbeddedResource Include="frmAgregarCategoria.resx">
       <DependentUpon>frmAgregarCategoria.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmAgregarMarca.resx">
+      <DependentUpon>frmAgregarMarca.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmMenuCategorias.resx">
       <DependentUpon>frmMenuCategorias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMenuMarcas.resx">
+      <DependentUpon>frmMenuMarcas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmPrincipal.resx">
       <DependentUpon>frmPrincipal.cs</DependentUpon>

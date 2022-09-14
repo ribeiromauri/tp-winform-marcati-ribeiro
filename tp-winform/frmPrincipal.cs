@@ -237,5 +237,12 @@ namespace tp_winform
             agregar.ShowDialog();
             Cargar();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            frmMenuMarcas agregar = new frmMenuMarcas();
+            agregar.ShowDialog();
+            Cargar();
+        }
     }
 }

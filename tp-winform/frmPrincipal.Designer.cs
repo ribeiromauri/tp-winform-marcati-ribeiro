@@ -46,6 +46,7 @@ namespace tp_winform
             this.txtFiltroAvanzado = new System.Windows.Forms.TextBox();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.btnCategoriasMarcas = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvArticulos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxArticulo)).BeginInit();
             this.gbBusqueda.SuspendLayout();
@@ -157,7 +158,7 @@ namespace tp_winform
             this.lblColumna.AutoSize = true;
             this.lblColumna.Location = new System.Drawing.Point(12, 25);
             this.lblColumna.Name = "lblColumna";
-            this.lblColumna.Size = new System.Drawing.Size(67, 16);
+            this.lblColumna.Size = new System.Drawing.Size(68, 16);
             this.lblColumna.TabIndex = 29;
             this.lblColumna.Text = "Columna";
             // 
@@ -176,7 +177,7 @@ namespace tp_winform
             this.lblCriterio.AutoSize = true;
             this.lblCriterio.Location = new System.Drawing.Point(223, 24);
             this.lblCriterio.Name = "lblCriterio";
-            this.lblCriterio.Size = new System.Drawing.Size(57, 16);
+            this.lblCriterio.Size = new System.Drawing.Size(58, 16);
             this.lblCriterio.TabIndex = 28;
             this.lblCriterio.Text = "Criterio";
             // 
@@ -194,7 +195,7 @@ namespace tp_winform
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(432, 25);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(44, 16);
+            this.label1.Size = new System.Drawing.Size(45, 16);
             this.label1.TabIndex = 27;
             this.label1.Text = "Valor";
             // 
@@ -226,12 +227,23 @@ namespace tp_winform
             this.btnCategoriasMarcas.UseVisualStyleBackColor = true;
             this.btnCategoriasMarcas.Click += new System.EventHandler(this.btnCategoriasMarcas_Click);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(951, 52);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(102, 25);
+            this.button1.TabIndex = 18;
+            this.button1.Text = "Menú Marcas";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Bisque;
             this.ClientSize = new System.Drawing.Size(1082, 450);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnCategoriasMarcas);
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.gpCriterio);
@@ -279,6 +291,7 @@ namespace tp_winform
         private System.Windows.Forms.Label lblCriterio;
         private System.Windows.Forms.TextBox txtBuscar;
         private System.Windows.Forms.Button btnCategoriasMarcas;
+        private System.Windows.Forms.Button button1;
     }
 }
 
