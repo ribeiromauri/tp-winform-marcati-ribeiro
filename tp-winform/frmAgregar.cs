@@ -43,6 +43,10 @@ namespace tp_winform
 
             try
             {
+                if (validarFormulario())
+                {
+                    return;
+                }
                 if(articulo == null)
                 {
                     articulo = new Articulos();
@@ -136,6 +140,30 @@ namespace tp_winform
             {
                 txtURL.Text = archivo.FileName;
                 CargarImagen(archivo.FileName);
+            }
+        }
+
+        private bool validarFormulario()
+        {
+            if (string.IsNullOrEmpty(txtCodigo.Text) || string.IsNullOrEmpty(txtNombre.Text) || string.IsNullOrEmpty(txtPrecio.Text))
+            {
+                MessageBox.Show("Completar campos requeridos (*)");
+                return true;
+            }
+            return false;
+        }
+
+        private void txtPrecio_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
+            // solo 1 decimal
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
             }
         }
     }
