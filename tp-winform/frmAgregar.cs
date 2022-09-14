@@ -145,9 +145,15 @@ namespace tp_winform
 
         private bool validarFormulario()
         {
+            ControladorArticulos articulo = new ControladorArticulos();
             if (string.IsNullOrEmpty(txtCodigo.Text) || string.IsNullOrEmpty(txtNombre.Text) || string.IsNullOrEmpty(txtPrecio.Text))
             {
                 MessageBox.Show("Completar campos requeridos (*)");
+                return true;
+            }
+            if (articulo.ComprobarRegistro(txtCodigo.Text))
+            {
+                MessageBox.Show("Ya existe un registro con el mismo codigo. Intente nuevamente");
                 return true;
             }
             return false;

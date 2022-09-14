@@ -216,6 +216,30 @@ namespace Controlador
                 throw ex;
             }
         }
+
+        public bool ComprobarRegistro(string codigo)
+        {
+            try
+            {
+                List<Articulos> lista = new List<Articulos>();
+                lista = listar();
+                foreach (var item in lista)
+                {
+                    if (item.Codigo.ToLower() == codigo.ToLower())
+                    {
+                        return true;
+                    }
+                }
+                return false;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            
+        }
+
     }
 
 }
