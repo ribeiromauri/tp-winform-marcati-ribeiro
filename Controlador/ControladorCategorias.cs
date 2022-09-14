@@ -40,5 +40,49 @@ namespace Controlador
                 datos.cerrarConexion();
             }
         }
+
+        public void Agregar(Categorias nuevo)
+        {
+            AccesoDatos datos = new AccesoDatos();
+
+            try
+            {
+                datos.setConsulta("INSERT INTO CATEGORIAS (Descripcion) VALUES (@Descripcion)");
+                datos.setParametro("@Descripcion", nuevo.Descripcion);
+                datos.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
+
+        public bool ComprobarRegistro(string codigo)
+        {
+            try
+            {
+                List<Categorias> lista = new List<Categorias>();
+                lista = listar();
+                foreach (var item in lista)
+                {
+                    if (item.Descripcion.ToLower() == codigo.ToLower())
+                    {
+                        return true;
+                    }
+                }
+                return false;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+        }
     }
 }

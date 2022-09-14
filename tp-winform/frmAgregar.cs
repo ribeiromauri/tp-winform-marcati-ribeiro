@@ -30,6 +30,12 @@ namespace tp_winform
             this.articulo = articulo;
             Text = "Modificacion";
             btnAgregarArticulo.Text = "Modificar";
+            lblCodigoRequerido.Text = "";
+            lblNombreRequerido.Text = "";
+            lblMarcaRequerida.Text = "";
+            lblCatRequerida.Text = "";
+            lblPrecioRequerido.Text = "";
+            lblValidar.Text = "";
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -43,7 +49,7 @@ namespace tp_winform
 
             try
             {
-                if (validarFormulario())
+                if (validarFormulario(articulo))
                 {
                     return;
                 }
@@ -143,15 +149,19 @@ namespace tp_winform
             }
         }
 
-        private bool validarFormulario()
+        private bool validarFormulario(Articulos articulo)
         {
-            ControladorArticulos articulo = new ControladorArticulos();
+            if(articulo.ID != 0)
+            {
+                return false;
+            }
+            ControladorArticulos controlador = new ControladorArticulos();
             if (string.IsNullOrEmpty(txtCodigo.Text) || string.IsNullOrEmpty(txtNombre.Text) || string.IsNullOrEmpty(txtPrecio.Text))
             {
                 MessageBox.Show("Completar campos requeridos (*)");
                 return true;
             }
-            if (articulo.ComprobarRegistro(txtCodigo.Text))
+            if (controlador.ComprobarRegistro(txtCodigo.Text))
             {
                 MessageBox.Show("Ya existe un registro con el mismo codigo. Intente nuevamente");
                 return true;

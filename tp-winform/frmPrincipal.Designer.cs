@@ -45,6 +45,7 @@ namespace tp_winform
             this.label1 = new System.Windows.Forms.Label();
             this.txtFiltroAvanzado = new System.Windows.Forms.TextBox();
             this.btnBuscar = new System.Windows.Forms.Button();
+            this.btnCategoriasMarcas = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvArticulos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxArticulo)).BeginInit();
             this.gbBusqueda.SuspendLayout();
@@ -215,12 +216,23 @@ namespace tp_winform
             this.btnBuscar.UseVisualStyleBackColor = true;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
+            // btnCategoriasMarcas
+            // 
+            this.btnCategoriasMarcas.Location = new System.Drawing.Point(951, 21);
+            this.btnCategoriasMarcas.Name = "btnCategoriasMarcas";
+            this.btnCategoriasMarcas.Size = new System.Drawing.Size(102, 25);
+            this.btnCategoriasMarcas.TabIndex = 17;
+            this.btnCategoriasMarcas.Text = "Menú Categorias";
+            this.btnCategoriasMarcas.UseVisualStyleBackColor = true;
+            this.btnCategoriasMarcas.Click += new System.EventHandler(this.btnCategoriasMarcas_Click);
+            // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Bisque;
             this.ClientSize = new System.Drawing.Size(1082, 450);
+            this.Controls.Add(this.btnCategoriasMarcas);
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.gpCriterio);
             this.Controls.Add(this.gbBusqueda);
@@ -266,6 +278,7 @@ namespace tp_winform
         private System.Windows.Forms.Label lblColumna;
         private System.Windows.Forms.Label lblCriterio;
         private System.Windows.Forms.TextBox txtBuscar;
+        private System.Windows.Forms.Button btnCategoriasMarcas;
     }
 }
 

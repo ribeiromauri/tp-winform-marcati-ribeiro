@@ -230,5 +230,12 @@ namespace tp_winform
             }
             return true;
         }
+
+        private void btnCategoriasMarcas_Click(object sender, EventArgs e)
+        {
+            frmMenuCategorias agregar = new frmMenuCategorias();
+            agregar.ShowDialog();
+            Cargar();
+        }
     }
 }

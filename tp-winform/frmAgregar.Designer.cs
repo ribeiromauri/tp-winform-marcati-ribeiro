@@ -48,11 +48,11 @@ namespace tp_winform
             this.pbxArticulos = new System.Windows.Forms.PictureBox();
             this.lblImagen = new System.Windows.Forms.Label();
             this.btnAltaImagen = new System.Windows.Forms.Button();
-            this.lblRequerido = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.lblCodigoRequerido = new System.Windows.Forms.Label();
+            this.lblNombreRequerido = new System.Windows.Forms.Label();
+            this.lblMarcaRequerida = new System.Windows.Forms.Label();
+            this.lblCatRequerida = new System.Windows.Forms.Label();
+            this.lblPrecioRequerido = new System.Windows.Forms.Label();
             this.lblValidar = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pbxArticulos)).BeginInit();
             this.SuspendLayout();
@@ -221,7 +221,7 @@ namespace tp_winform
             this.lblImagen.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblImagen.Location = new System.Drawing.Point(494, 73);
             this.lblImagen.Name = "lblImagen";
-            this.lblImagen.Size = new System.Drawing.Size(53, 16);
+            this.lblImagen.Size = new System.Drawing.Size(52, 16);
             this.lblImagen.TabIndex = 34;
             this.lblImagen.Text = "Imagen";
             // 
@@ -236,55 +236,55 @@ namespace tp_winform
             this.btnAltaImagen.UseVisualStyleBackColor = true;
             this.btnAltaImagen.Click += new System.EventHandler(this.btnAltaImagen_Click);
             // 
-            // lblRequerido
+            // lblCodigoRequerido
             // 
-            this.lblRequerido.AutoSize = true;
-            this.lblRequerido.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRequerido.Location = new System.Drawing.Point(379, 48);
-            this.lblRequerido.Name = "lblRequerido";
-            this.lblRequerido.Size = new System.Drawing.Size(20, 25);
-            this.lblRequerido.TabIndex = 36;
-            this.lblRequerido.Text = "*";
+            this.lblCodigoRequerido.AutoSize = true;
+            this.lblCodigoRequerido.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCodigoRequerido.Location = new System.Drawing.Point(379, 48);
+            this.lblCodigoRequerido.Name = "lblCodigoRequerido";
+            this.lblCodigoRequerido.Size = new System.Drawing.Size(20, 25);
+            this.lblCodigoRequerido.TabIndex = 36;
+            this.lblCodigoRequerido.Text = "*";
             // 
-            // label1
+            // lblNombreRequerido
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(378, 73);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(20, 25);
-            this.label1.TabIndex = 37;
-            this.label1.Text = "*";
+            this.lblNombreRequerido.AutoSize = true;
+            this.lblNombreRequerido.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNombreRequerido.Location = new System.Drawing.Point(378, 73);
+            this.lblNombreRequerido.Name = "lblNombreRequerido";
+            this.lblNombreRequerido.Size = new System.Drawing.Size(20, 25);
+            this.lblNombreRequerido.TabIndex = 37;
+            this.lblNombreRequerido.Text = "*";
             // 
-            // label2
+            // lblMarcaRequerida
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(214, 99);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(20, 25);
-            this.label2.TabIndex = 38;
-            this.label2.Text = "*";
+            this.lblMarcaRequerida.AutoSize = true;
+            this.lblMarcaRequerida.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMarcaRequerida.Location = new System.Drawing.Point(214, 99);
+            this.lblMarcaRequerida.Name = "lblMarcaRequerida";
+            this.lblMarcaRequerida.Size = new System.Drawing.Size(20, 25);
+            this.lblMarcaRequerida.TabIndex = 38;
+            this.lblMarcaRequerida.Text = "*";
             // 
-            // label3
+            // lblCatRequerida
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(214, 125);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(20, 25);
-            this.label3.TabIndex = 39;
-            this.label3.Text = "*";
+            this.lblCatRequerida.AutoSize = true;
+            this.lblCatRequerida.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCatRequerida.Location = new System.Drawing.Point(214, 125);
+            this.lblCatRequerida.Name = "lblCatRequerida";
+            this.lblCatRequerida.Size = new System.Drawing.Size(20, 25);
+            this.lblCatRequerida.TabIndex = 39;
+            this.lblCatRequerida.Text = "*";
             // 
-            // label4
+            // lblPrecioRequerido
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(378, 179);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(20, 25);
-            this.label4.TabIndex = 40;
-            this.label4.Text = "*";
+            this.lblPrecioRequerido.AutoSize = true;
+            this.lblPrecioRequerido.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPrecioRequerido.Location = new System.Drawing.Point(378, 179);
+            this.lblPrecioRequerido.Name = "lblPrecioRequerido";
+            this.lblPrecioRequerido.Size = new System.Drawing.Size(20, 25);
+            this.lblPrecioRequerido.TabIndex = 40;
+            this.lblPrecioRequerido.Text = "*";
             // 
             // lblValidar
             // 
@@ -303,11 +303,11 @@ namespace tp_winform
             this.BackColor = System.Drawing.Color.Bisque;
             this.ClientSize = new System.Drawing.Size(648, 410);
             this.Controls.Add(this.lblValidar);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.lblRequerido);
+            this.Controls.Add(this.lblPrecioRequerido);
+            this.Controls.Add(this.lblCatRequerida);
+            this.Controls.Add(this.lblMarcaRequerida);
+            this.Controls.Add(this.lblNombreRequerido);
+            this.Controls.Add(this.lblCodigoRequerido);
             this.Controls.Add(this.btnAltaImagen);
             this.Controls.Add(this.lblImagen);
             this.Controls.Add(this.pbxArticulos);
@@ -362,11 +362,11 @@ namespace tp_winform
         private System.Windows.Forms.PictureBox pbxArticulos;
         private System.Windows.Forms.Label lblImagen;
         private System.Windows.Forms.Button btnAltaImagen;
-        private System.Windows.Forms.Label lblRequerido;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lblCodigoRequerido;
+        private System.Windows.Forms.Label lblNombreRequerido;
+        private System.Windows.Forms.Label lblMarcaRequerida;
+        private System.Windows.Forms.Label lblCatRequerida;
+        private System.Windows.Forms.Label lblPrecioRequerido;
         private System.Windows.Forms.Label lblValidar;
     }
 }
