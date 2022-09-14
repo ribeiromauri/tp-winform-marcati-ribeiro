@@ -84,5 +84,24 @@ namespace Controlador
             }
 
         }
+
+        public void Eliminar(int ID)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.setConsulta("DELETE FROM CATEGORIAS WHERE Id = @id");
+                datos.setParametro("@id", ID);
+                datos.ejecutarLectura();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
     }
 }

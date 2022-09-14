@@ -64,5 +64,30 @@ namespace tp_winform
             agregar.ShowDialog();
             Cargar();
         }
+
+        private void btnEliminarCat_Click(object sender, EventArgs e)
+        {
+            ControladorCategorias controlador = new ControladorCategorias();
+            Categorias seleccionado;
+            try
+            {
+                if (dgvCategorias.CurrentRow == null)
+                {
+                    MessageBox.Show("No hay ninguna categoría seleccionada");
+                    return;
+                }
+                DialogResult eliminar = MessageBox.Show("¿Eliminar categoría?", "Eliminando categoría", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (eliminar == DialogResult.Yes)
+                {
+                    seleccionado = (Categorias)dgvCategorias.CurrentRow.DataBoundItem;
+                    controlador.Eliminar(seleccionado.ID);
+                    Cargar();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
     }
 }
