@@ -69,6 +69,7 @@ namespace tp_winform
         {
             ControladorCategorias controlador = new ControladorCategorias();
             Categorias seleccionado;
+            ControladorArticulos controladorArt = new ControladorArticulos();
             try
             {
                 if (dgvCategorias.CurrentRow == null)
@@ -76,10 +77,20 @@ namespace tp_winform
                     MessageBox.Show("No hay ninguna categoría seleccionada");
                     return;
                 }
+                seleccionado = (Categorias)dgvCategorias.CurrentRow.DataBoundItem;
+                List<Articulos> lista = new List<Articulos>();
+                lista = controladorArt.listar();
+                foreach (var item in lista)
+                {
+                    if (item.Categoria.ID == seleccionado.ID)
+                    {
+                        MessageBox.Show("No se puede eliminar una categoria que tiene articulos dados de alta");
+                        return;
+                    }
+                }
                 DialogResult eliminar = MessageBox.Show("¿Eliminar categoría?", "Eliminando categoría", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (eliminar == DialogResult.Yes)
                 {
-                    seleccionado = (Categorias)dgvCategorias.CurrentRow.DataBoundItem;
                     controlador.Eliminar(seleccionado.ID);
                     Cargar();
                 }

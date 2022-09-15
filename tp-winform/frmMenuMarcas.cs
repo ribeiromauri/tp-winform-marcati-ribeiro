@@ -69,6 +69,7 @@ namespace tp_winform
         {
             ControladorMarcas controlador = new ControladorMarcas();
             Marcas seleccionado;
+            ControladorArticulos controladorArt = new ControladorArticulos();
             try
             {
                 if (dgvMarcas.CurrentRow == null)
@@ -76,10 +77,20 @@ namespace tp_winform
                     MessageBox.Show("No hay ninguna marca seleccionada");
                     return;
                 }
+                seleccionado = (Marcas)dgvMarcas.CurrentRow.DataBoundItem;
+                List<Articulos> lista = new List<Articulos>();
+                lista = controladorArt.listar();
+                foreach (var item in lista)
+                {
+                    if (item.Marca.ID == seleccionado.ID)
+                    {
+                        MessageBox.Show("No se puede eliminar una marca que tiene articulos dados de alta");
+                        return;
+                    }
+                }
                 DialogResult eliminar = MessageBox.Show("¿Eliminar marca?", "Eliminando marca", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (eliminar == DialogResult.Yes)
                 {
-                    seleccionado = (Marcas)dgvMarcas.CurrentRow.DataBoundItem;
                     controlador.Eliminar(seleccionado.ID);
                     Cargar();
                 }
