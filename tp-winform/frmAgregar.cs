@@ -80,8 +80,6 @@ namespace tp_winform
                     MessageBox.Show("Se agregó con éxito");
                 }
 
-                
-
                 Close();
 
             }

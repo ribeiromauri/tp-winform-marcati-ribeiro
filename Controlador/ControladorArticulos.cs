@@ -62,10 +62,10 @@ namespace Controlador
 
             try
             {
-                datos.setConsulta("INSERT INTO ARTICULOS (Codigo, Nombre, Descripcion, IdMarca, IdCategoria, Precio, ImagenUrl) VALUES ('" + nuevo.Codigo + "', '" + nuevo.Nombre + "', '" + nuevo.Descripcion + "', @IdMarca, @IdCategoria, " + nuevo.Precio + ", '@ImagenUrl')");
+                datos.setConsulta("INSERT INTO ARTICULOS (Codigo, Nombre, Descripcion, IdMarca, IdCategoria, Precio, ImagenUrl) VALUES ('" + nuevo.Codigo + "', '" + nuevo.Nombre + "', '" + nuevo.Descripcion + "', @IdMarca, @IdCategoria, " + nuevo.Precio + ", @ImagenUrl)");
                 datos.setParametro("@IdMarca", nuevo.Marca.ID);
                 datos.setParametro("@IdCategoria", nuevo.Categoria.ID);
-                datos.setParametro("@ImgenUrl", nuevo.ImagenUrl);
+                datos.setParametro("@ImagenUrl", nuevo.ImagenUrl);
                 datos.ejecutarAccion();
             }
             catch (Exception ex)
