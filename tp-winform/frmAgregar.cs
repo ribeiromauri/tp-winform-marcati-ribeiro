@@ -62,6 +62,10 @@ namespace tp_winform
                 articulo.Descripcion = txtDescripcion.Text;
                 articulo.Marca = (Marcas)cboMarca.SelectedItem;
                 articulo.Categoria = (Categorias)cboCategoria.SelectedItem;
+                if (archivo != null && !(txtURL.Text.ToUpper().Contains("HTTP")))
+                {
+                    File.Copy(archivo.FileName, ConfigurationManager.AppSettings["imagenes-articulos"] + archivo.SafeFileName);
+                }
                 articulo.ImagenUrl = txtURL.Text;
                 articulo.Precio = decimal.Parse(txtPrecio.Text);
 
@@ -76,10 +80,7 @@ namespace tp_winform
                     MessageBox.Show("Se agregó con éxito");
                 }
 
-                if (archivo != null && !(txtURL.Text.ToUpper().Contains("HTTP")))
-                {
-                    File.Copy(archivo.FileName, ConfigurationManager.AppSettings["imagenes-articulos"] + archivo.SafeFileName);
-                }
+                
 
                 Close();
 
@@ -151,7 +152,7 @@ namespace tp_winform
 
         private bool validarFormulario(Articulos articulo)
         {
-            if(articulo.ID != 0)
+            if (articulo != null)
             {
                 return false;
             }
@@ -166,6 +167,7 @@ namespace tp_winform
                 MessageBox.Show("Ya existe un registro con el mismo codigo. Intente nuevamente");
                 return true;
             }
+           
             return false;
         }
 
